@@ -1,0 +1,41 @@
+public LoginPage (WebDriver driver) 
+	{
+		/*
+		this.driver = driver; // connect driver of this page
+		PageFactory.initElements(driver, this); // hena ana ba3mel connect lel driver bel page 
+		*/										// 3ashan a3araf 2ay element ba3melo call be driver web3den esm el page
+												// EX: driver.findElement(By.className("login"));
+	}
+@FindBy(id="LoginBTN")
+	public WebElement signBtn;
+	
+	@FindBy(id="submit")
+	public WebElement submit;
+	
+	@FindBy(id="usernamextxt")
+	public WebElement userNametxt;
+	
+	@FindBy(id="password")
+	public WebElement paswordtxt;
+	
+	@FindBy(id="forgetpass")
+	public WebElement forgotpasLable;
+	
+	@FindBy(id="forgetname")
+	public WebElement forgetname;
+	
+	@FindBy(id="")
+	public WebElement incorrectpassLable;
+	
+	@FindBy(id="")
+	public WebElement incorrectmailLable;
+	
+	@FindBy(id="")
+	public WebElement UserInfo;
+	
+	
+	@FindBy(className="partition-title")
+	public WebElement signlable;
+	
+	@FindBy()
+	public WebElement emailtxt;
