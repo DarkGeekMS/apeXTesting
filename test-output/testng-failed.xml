@@ -6,11 +6,11 @@
       <class name="TestingScript.LoginTest">
         <methods>
           <include name="Test1"/>
-          <include name="Test2"/>
-          <include name="Test3"/>
-          <include name="Test4"/>
+          <include name="Test5"/>
           <include name="finalize"/>
-          <include name="init"/>
+          <include name="Test6"/>
+          <include name="Test7"/>
+          <include name="BeforeClass"/>
         </methods>
       </class> <!-- TestingScript.LoginTest -->
     </classes>
