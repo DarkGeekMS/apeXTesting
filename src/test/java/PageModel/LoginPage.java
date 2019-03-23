@@ -17,7 +17,8 @@ public class LoginPage {
 	public WebElement UserInfo;
 	public WebElement signlable;
 	public WebElement emailtxt;
-	
+	public WebElement loguot;
+	public String loguotID;
 	public String signBtnID;
 	public String submitID;
 	public String userNametxtID;
@@ -41,6 +42,7 @@ public class LoginPage {
 		incorrectmailLableID = "incorrectmail";
 		UserInfoID = "loggedbutton";
 		signlableID = "signlable";
+		loguotID="";
 		
 	}
 	
