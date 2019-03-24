@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/1/5</td>
+<td>Tests passed/Failed/Skipped:</td><td>6/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Mar 21 21:41:07 EET 2019</td>
+<td>Started on:</td><td>Sun Mar 24 07:29:11 EET 2019</td>
 </tr>
-<tr><td>Total time:</td><td>5 seconds (5867 ms)</td>
+<tr><td>Total time:</td><td>45 seconds (45880 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -68,145 +68,6 @@ function toggleAllBoxes() {
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
 <table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='TestingScript.LoginTest.beforeMethod()'><b>beforeMethod</b><br>Test class: TestingScript.LoginTest</td>
-<td><div><pre>org.openqa.selenium.NoSuchSessionException: invalid session id
-  (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Windows NT 10.0.14393 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-Build info: version: &apos;3.8.0&apos;, revision: &apos;924c4067df&apos;, time: &apos;2017-11-30T11:20:39.408Z&apos;
-System info: host: &apos;DESKTOP-5P6GP1F&apos;, ip: &apos;192.168.1.6&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_191&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 73.0.3683.68 (47787ec04b6e3..., userDataDir: C:\Users\future\AppData\Loc...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:54095}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 72.0.3626.121, webStorageEnabled: true}
-Session ID: 84d66e3a57b50d1e9d2def3266b644ef
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
-	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:325)
-	at org.openqa.selenium.remote.RemoteWebDriver$RemoteNavigation.to(RemoteWebDriver.java:912)
-	at DriverDef.Chrome.naivgates(Chrome.java:44)
-	at TestingScript.LoginTest.beforeMethod(LoginTest.java:142)
-... Removed 32 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace351417028", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace351417028'><pre>org.openqa.selenium.NoSuchSessionException: invalid session id
-  (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Windows NT 10.0.14393 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-Build info: version: &apos;3.8.0&apos;, revision: &apos;924c4067df&apos;, time: &apos;2017-11-30T11:20:39.408Z&apos;
-System info: host: &apos;DESKTOP-5P6GP1F&apos;, ip: &apos;192.168.1.6&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_191&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 73.0.3683.68 (47787ec04b6e3..., userDataDir: C:\Users\future\AppData\Loc...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:54095}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 72.0.3626.121, webStorageEnabled: true}
-Session ID: 84d66e3a57b50d1e9d2def3266b644ef
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
-	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:325)
-	at org.openqa.selenium.remote.RemoteWebDriver$RemoteNavigation.to(RemoteWebDriver.java:912)
-	at DriverDef.Chrome.naivgates(Chrome.java:44)
-	at TestingScript.LoginTest.beforeMethod(LoginTest.java:142)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:451)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:516)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:707)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:979)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:648)
-	at org.testng.TestRunner.run(TestRunner.java:505)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)
-	at org.testng.TestNG.runSuites(TestNG.java:1028)
-	at org.testng.TestNG.run(TestNG.java:996)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>0</td>
-<td>TestingScript.LoginTest@6e2829c7</td></tr>
-</table><p>
-<table width='100%' border='1' class='invocation-skipped'>
-<tr><td colspan='4' align='center'><b>SKIPPED CONFIGURATIONS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='TestingScript.LoginTest.beforeMethod()'><b>beforeMethod</b><br>Test class: TestingScript.LoginTest</td>
-<td></td>
-<td>0</td>
-<td>TestingScript.LoginTest@6e2829c7</td></tr>
-<tr>
-<td title='TestingScript.LoginTest.beforeMethod()'><b>beforeMethod</b><br>Test class: TestingScript.LoginTest</td>
-<td></td>
-<td>0</td>
-<td>TestingScript.LoginTest@6e2829c7</td></tr>
-<tr>
-<td title='TestingScript.LoginTest.beforeMethod()'><b>beforeMethod</b><br>Test class: TestingScript.LoginTest</td>
-<td></td>
-<td>0</td>
-<td>TestingScript.LoginTest@6e2829c7</td></tr>
-<tr>
-<td title='TestingScript.LoginTest.beforeMethod()'><b>beforeMethod</b><br>Test class: TestingScript.LoginTest</td>
-<td></td>
-<td>0</td>
-<td>TestingScript.LoginTest@6e2829c7</td></tr>
-<tr>
-<td title='TestingScript.LoginTest.afterMethod()'><b>afterMethod</b><br>Test class: TestingScript.LoginTest</td>
-<td></td>
-<td>0</td>
-<td>TestingScript.LoginTest@6e2829c7</td></tr>
-<tr>
-<td title='TestingScript.LoginTest.afterMethod()'><b>afterMethod</b><br>Test class: TestingScript.LoginTest</td>
-<td></td>
-<td>0</td>
-<td>TestingScript.LoginTest@6e2829c7</td></tr>
-<tr>
-<td title='TestingScript.LoginTest.afterMethod()'><b>afterMethod</b><br>Test class: TestingScript.LoginTest</td>
-<td></td>
-<td>0</td>
-<td>TestingScript.LoginTest@6e2829c7</td></tr>
-<tr>
-<td title='TestingScript.LoginTest.afterMethod()'><b>afterMethod</b><br>Test class: TestingScript.LoginTest</td>
-<td></td>
-<td>0</td>
-<td>TestingScript.LoginTest@6e2829c7</td></tr>
-<tr>
-<td title='TestingScript.LoginTest.afterMethod()'><b>afterMethod</b><br>Test class: TestingScript.LoginTest</td>
-<td></td>
-<td>0</td>
-<td>TestingScript.LoginTest@6e2829c7</td></tr>
-</table><p>
-<table width='100%' border='1' class='invocation-failed'>
 <tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
@@ -214,68 +75,24 @@ Session ID: 84d66e3a57b50d1e9d2def3266b644ef
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='TestingScript.LoginTest.Test1()'><b>Test1</b><br>Test class: TestingScript.LoginTest<br>Test method: submit without entering data</td>
-<td><div><pre>org.openqa.selenium.WebDriverException: unknown error: Element &lt;button data-v-688b5e20=&quot;&quot; type=&quot;button&quot; id=&quot;LoginBTN&quot; class=&quot;btn btn-info log1&quot;&gt;...&lt;/button&gt; is not clickable at point (1060, 30). Other element would receive the click: &lt;button data-v-688b5e20=&quot;&quot; type=&quot;button&quot; id=&quot;LoginBTN&quot; class=&quot;btn btn-info log1&quot;&gt;...&lt;/button&gt;
-  (Session info: chrome=72.0.3626.121)
-  (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Windows NT 10.0.14393 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-Build info: version: &apos;3.8.0&apos;, revision: &apos;924c4067df&apos;, time: &apos;2017-11-30T11:20:39.408Z&apos;
-System info: host: &apos;DESKTOP-5P6GP1F&apos;, ip: &apos;192.168.1.6&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_191&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 73.0.3683.68 (47787ec04b6e3..., userDataDir: C:\Users\future\AppData\Loc...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:54095}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 72.0.3626.121, webStorageEnabled: true}
-Session ID: 84d66e3a57b50d1e9d2def3266b644ef
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
-	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:279)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:83)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at com.sun.proxy.$Proxy9.click(Unknown Source)
-	at TestingScript.LoginTest.Test1(LoginTest.java:17)
-... Removed 33 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace169833205", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace169833205'><pre>org.openqa.selenium.WebDriverException: unknown error: Element &lt;button data-v-688b5e20=&quot;&quot; type=&quot;button&quot; id=&quot;LoginBTN&quot; class=&quot;btn btn-info log1&quot;&gt;...&lt;/button&gt; is not clickable at point (1060, 30). Other element would receive the click: &lt;button data-v-688b5e20=&quot;&quot; type=&quot;button&quot; id=&quot;LoginBTN&quot; class=&quot;btn btn-info log1&quot;&gt;...&lt;/button&gt;
-  (Session info: chrome=72.0.3626.121)
-  (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Windows NT 10.0.14393 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-Build info: version: &apos;3.8.0&apos;, revision: &apos;924c4067df&apos;, time: &apos;2017-11-30T11:20:39.408Z&apos;
-System info: host: &apos;DESKTOP-5P6GP1F&apos;, ip: &apos;192.168.1.6&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_191&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 73.0.3683.68 (47787ec04b6e3..., userDataDir: C:\Users\future\AppData\Loc...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:54095}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 72.0.3626.121, webStorageEnabled: true}
-Session ID: 84d66e3a57b50d1e9d2def3266b644ef
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
-	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:279)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:83)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at com.sun.proxy.$Proxy9.click(Unknown Source)
-	at TestingScript.LoginTest.Test1(LoginTest.java:17)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
+<td title='TestingScript.LoginTest.Test7()'><b>Test7</b><br>Test class: TestingScript.LoginTest<br>Test method: loguot</td>
+<td><div><pre>java.lang.AssertionError: expected [true] but found [false]
+	at TestingScript.LoginTest.Test7(LoginTest.java:403)
+... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace981487964", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace981487964'><pre>java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:96)
+	at org.testng.Assert.failNotEquals(Assert.java:776)
+	at org.testng.Assert.assertTrue(Assert.java:44)
+	at org.testng.Assert.assertTrue(Assert.java:54)
+	at TestingScript.LoginTest.Test7(LoginTest.java:403)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:571)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:707)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:979)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
 	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
 	at org.testng.TestRunner.privateRun(TestRunner.java:648)
@@ -286,414 +103,54 @@ Session ID: 84d66e3a57b50d1e9d2def3266b644ef
 	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
 	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
 	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)
-	at org.testng.TestNG.runSuites(TestNG.java:1028)
-	at org.testng.TestNG.run(TestNG.java:996)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>0</td>
-<td>TestingScript.LoginTest@6e2829c7</td></tr>
+<td>25</td>
+<td>TestingScript.LoginTest@394df057</td></tr>
 </table><p>
-<table width='100%' border='1' class='invocation-skipped'>
-<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
+<td title='TestingScript.LoginTest.Test1()'><b>Test1</b><br>Test class: TestingScript.LoginTest<br>Test method: submit without entering data</td>
+<td></td>
+<td>3</td>
+<td>TestingScript.LoginTest@394df057</td></tr>
+<tr>
 <td title='TestingScript.LoginTest.Test2()'><b>Test2</b><br>Test class: TestingScript.LoginTest<br>Test method: wrong user name</td>
-<td><div><pre>org.openqa.selenium.NoSuchSessionException: invalid session id
-  (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Windows NT 10.0.14393 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-Build info: version: &apos;3.8.0&apos;, revision: &apos;924c4067df&apos;, time: &apos;2017-11-30T11:20:39.408Z&apos;
-System info: host: &apos;DESKTOP-5P6GP1F&apos;, ip: &apos;192.168.1.6&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_191&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 73.0.3683.68 (47787ec04b6e3..., userDataDir: C:\Users\future\AppData\Loc...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:54095}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 72.0.3626.121, webStorageEnabled: true}
-Session ID: 84d66e3a57b50d1e9d2def3266b644ef
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
-	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:325)
-	at org.openqa.selenium.remote.RemoteWebDriver$RemoteNavigation.to(RemoteWebDriver.java:912)
-	at DriverDef.Chrome.naivgates(Chrome.java:44)
-	at TestingScript.LoginTest.beforeMethod(LoginTest.java:142)
-... Removed 32 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace215082566", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace215082566'><pre>org.openqa.selenium.NoSuchSessionException: invalid session id
-  (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Windows NT 10.0.14393 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-Build info: version: &apos;3.8.0&apos;, revision: &apos;924c4067df&apos;, time: &apos;2017-11-30T11:20:39.408Z&apos;
-System info: host: &apos;DESKTOP-5P6GP1F&apos;, ip: &apos;192.168.1.6&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_191&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 73.0.3683.68 (47787ec04b6e3..., userDataDir: C:\Users\future\AppData\Loc...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:54095}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 72.0.3626.121, webStorageEnabled: true}
-Session ID: 84d66e3a57b50d1e9d2def3266b644ef
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
-	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:325)
-	at org.openqa.selenium.remote.RemoteWebDriver$RemoteNavigation.to(RemoteWebDriver.java:912)
-	at DriverDef.Chrome.naivgates(Chrome.java:44)
-	at TestingScript.LoginTest.beforeMethod(LoginTest.java:142)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:451)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:516)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:707)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:979)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:648)
-	at org.testng.TestRunner.run(TestRunner.java:505)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)
-	at org.testng.TestNG.runSuites(TestNG.java:1028)
-	at org.testng.TestNG.run(TestNG.java:996)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>0</td>
-<td>TestingScript.LoginTest@6e2829c7</td></tr>
+<td></td>
+<td>2</td>
+<td>TestingScript.LoginTest@394df057</td></tr>
 <tr>
 <td title='TestingScript.LoginTest.Test3()'><b>Test3</b><br>Test class: TestingScript.LoginTest<br>Test method: wrong pass</td>
-<td><div><pre>org.openqa.selenium.NoSuchSessionException: invalid session id
-  (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Windows NT 10.0.14393 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-Build info: version: &apos;3.8.0&apos;, revision: &apos;924c4067df&apos;, time: &apos;2017-11-30T11:20:39.408Z&apos;
-System info: host: &apos;DESKTOP-5P6GP1F&apos;, ip: &apos;192.168.1.6&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_191&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 73.0.3683.68 (47787ec04b6e3..., userDataDir: C:\Users\future\AppData\Loc...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:54095}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 72.0.3626.121, webStorageEnabled: true}
-Session ID: 84d66e3a57b50d1e9d2def3266b644ef
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
-	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:325)
-	at org.openqa.selenium.remote.RemoteWebDriver$RemoteNavigation.to(RemoteWebDriver.java:912)
-	at DriverDef.Chrome.naivgates(Chrome.java:44)
-	at TestingScript.LoginTest.beforeMethod(LoginTest.java:142)
-... Removed 32 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace362827515", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace362827515'><pre>org.openqa.selenium.NoSuchSessionException: invalid session id
-  (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Windows NT 10.0.14393 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-Build info: version: &apos;3.8.0&apos;, revision: &apos;924c4067df&apos;, time: &apos;2017-11-30T11:20:39.408Z&apos;
-System info: host: &apos;DESKTOP-5P6GP1F&apos;, ip: &apos;192.168.1.6&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_191&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 73.0.3683.68 (47787ec04b6e3..., userDataDir: C:\Users\future\AppData\Loc...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:54095}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 72.0.3626.121, webStorageEnabled: true}
-Session ID: 84d66e3a57b50d1e9d2def3266b644ef
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
-	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:325)
-	at org.openqa.selenium.remote.RemoteWebDriver$RemoteNavigation.to(RemoteWebDriver.java:912)
-	at DriverDef.Chrome.naivgates(Chrome.java:44)
-	at TestingScript.LoginTest.beforeMethod(LoginTest.java:142)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:451)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:516)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:707)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:979)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:648)
-	at org.testng.TestRunner.run(TestRunner.java:505)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)
-	at org.testng.TestNG.runSuites(TestNG.java:1028)
-	at org.testng.TestNG.run(TestNG.java:996)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>0</td>
-<td>TestingScript.LoginTest@6e2829c7</td></tr>
+<td></td>
+<td>1</td>
+<td>TestingScript.LoginTest@394df057</td></tr>
 <tr>
 <td title='TestingScript.LoginTest.Test4()'><b>Test4</b><br>Test class: TestingScript.LoginTest<br>Test method: right mail and pass</td>
-<td><div><pre>org.openqa.selenium.NoSuchSessionException: invalid session id
-  (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Windows NT 10.0.14393 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-Build info: version: &apos;3.8.0&apos;, revision: &apos;924c4067df&apos;, time: &apos;2017-11-30T11:20:39.408Z&apos;
-System info: host: &apos;DESKTOP-5P6GP1F&apos;, ip: &apos;192.168.1.6&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_191&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 73.0.3683.68 (47787ec04b6e3..., userDataDir: C:\Users\future\AppData\Loc...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:54095}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 72.0.3626.121, webStorageEnabled: true}
-Session ID: 84d66e3a57b50d1e9d2def3266b644ef
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
-	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:325)
-	at org.openqa.selenium.remote.RemoteWebDriver$RemoteNavigation.to(RemoteWebDriver.java:912)
-	at DriverDef.Chrome.naivgates(Chrome.java:44)
-	at TestingScript.LoginTest.beforeMethod(LoginTest.java:142)
-... Removed 32 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace837659261", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace837659261'><pre>org.openqa.selenium.NoSuchSessionException: invalid session id
-  (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Windows NT 10.0.14393 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-Build info: version: &apos;3.8.0&apos;, revision: &apos;924c4067df&apos;, time: &apos;2017-11-30T11:20:39.408Z&apos;
-System info: host: &apos;DESKTOP-5P6GP1F&apos;, ip: &apos;192.168.1.6&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_191&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 73.0.3683.68 (47787ec04b6e3..., userDataDir: C:\Users\future\AppData\Loc...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:54095}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 72.0.3626.121, webStorageEnabled: true}
-Session ID: 84d66e3a57b50d1e9d2def3266b644ef
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
-	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:325)
-	at org.openqa.selenium.remote.RemoteWebDriver$RemoteNavigation.to(RemoteWebDriver.java:912)
-	at DriverDef.Chrome.naivgates(Chrome.java:44)
-	at TestingScript.LoginTest.beforeMethod(LoginTest.java:142)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:451)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:516)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:707)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:979)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:648)
-	at org.testng.TestRunner.run(TestRunner.java:505)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)
-	at org.testng.TestNG.runSuites(TestNG.java:1028)
-	at org.testng.TestNG.run(TestNG.java:996)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>0</td>
-<td>TestingScript.LoginTest@6e2829c7</td></tr>
+<td></td>
+<td>6</td>
+<td>TestingScript.LoginTest@394df057</td></tr>
 <tr>
 <td title='TestingScript.LoginTest.Test5()'><b>Test5</b><br>Test class: TestingScript.LoginTest<br>Test method: forget username</td>
-<td><div><pre>org.openqa.selenium.NoSuchSessionException: invalid session id
-  (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Windows NT 10.0.14393 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-Build info: version: &apos;3.8.0&apos;, revision: &apos;924c4067df&apos;, time: &apos;2017-11-30T11:20:39.408Z&apos;
-System info: host: &apos;DESKTOP-5P6GP1F&apos;, ip: &apos;192.168.1.6&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_191&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 73.0.3683.68 (47787ec04b6e3..., userDataDir: C:\Users\future\AppData\Loc...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:54095}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 72.0.3626.121, webStorageEnabled: true}
-Session ID: 84d66e3a57b50d1e9d2def3266b644ef
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
-	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:325)
-	at org.openqa.selenium.remote.RemoteWebDriver$RemoteNavigation.to(RemoteWebDriver.java:912)
-	at DriverDef.Chrome.naivgates(Chrome.java:44)
-	at TestingScript.LoginTest.beforeMethod(LoginTest.java:142)
-... Removed 32 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2084559714", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace2084559714'><pre>org.openqa.selenium.NoSuchSessionException: invalid session id
-  (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Windows NT 10.0.14393 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-Build info: version: &apos;3.8.0&apos;, revision: &apos;924c4067df&apos;, time: &apos;2017-11-30T11:20:39.408Z&apos;
-System info: host: &apos;DESKTOP-5P6GP1F&apos;, ip: &apos;192.168.1.6&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_191&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 73.0.3683.68 (47787ec04b6e3..., userDataDir: C:\Users\future\AppData\Loc...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:54095}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 72.0.3626.121, webStorageEnabled: true}
-Session ID: 84d66e3a57b50d1e9d2def3266b644ef
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
-	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:325)
-	at org.openqa.selenium.remote.RemoteWebDriver$RemoteNavigation.to(RemoteWebDriver.java:912)
-	at DriverDef.Chrome.naivgates(Chrome.java:44)
-	at TestingScript.LoginTest.beforeMethod(LoginTest.java:142)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:451)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:516)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:707)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:979)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:648)
-	at org.testng.TestRunner.run(TestRunner.java:505)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)
-	at org.testng.TestNG.runSuites(TestNG.java:1028)
-	at org.testng.TestNG.run(TestNG.java:996)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>0</td>
-<td>TestingScript.LoginTest@6e2829c7</td></tr>
+<td></td>
+<td>1</td>
+<td>TestingScript.LoginTest@394df057</td></tr>
 <tr>
 <td title='TestingScript.LoginTest.Test6()'><b>Test6</b><br>Test class: TestingScript.LoginTest<br>Test method: forget password</td>
-<td><div><pre>org.openqa.selenium.NoSuchSessionException: invalid session id
-  (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Windows NT 10.0.14393 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-Build info: version: &apos;3.8.0&apos;, revision: &apos;924c4067df&apos;, time: &apos;2017-11-30T11:20:39.408Z&apos;
-System info: host: &apos;DESKTOP-5P6GP1F&apos;, ip: &apos;192.168.1.6&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_191&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 73.0.3683.68 (47787ec04b6e3..., userDataDir: C:\Users\future\AppData\Loc...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:54095}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 72.0.3626.121, webStorageEnabled: true}
-Session ID: 84d66e3a57b50d1e9d2def3266b644ef
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
-	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:325)
-	at org.openqa.selenium.remote.RemoteWebDriver$RemoteNavigation.to(RemoteWebDriver.java:912)
-	at DriverDef.Chrome.naivgates(Chrome.java:44)
-	at TestingScript.LoginTest.beforeMethod(LoginTest.java:142)
-... Removed 32 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1842853283", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1842853283'><pre>org.openqa.selenium.NoSuchSessionException: invalid session id
-  (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Windows NT 10.0.14393 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-Build info: version: &apos;3.8.0&apos;, revision: &apos;924c4067df&apos;, time: &apos;2017-11-30T11:20:39.408Z&apos;
-System info: host: &apos;DESKTOP-5P6GP1F&apos;, ip: &apos;192.168.1.6&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_191&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 73.0.3683.68 (47787ec04b6e3..., userDataDir: C:\Users\future\AppData\Loc...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:54095}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 72.0.3626.121, webStorageEnabled: true}
-Session ID: 84d66e3a57b50d1e9d2def3266b644ef
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
-	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:325)
-	at org.openqa.selenium.remote.RemoteWebDriver$RemoteNavigation.to(RemoteWebDriver.java:912)
-	at DriverDef.Chrome.naivgates(Chrome.java:44)
-	at TestingScript.LoginTest.beforeMethod(LoginTest.java:142)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:451)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:516)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:707)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:979)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:648)
-	at org.testng.TestRunner.run(TestRunner.java:505)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)
-	at org.testng.TestNG.runSuites(TestNG.java:1028)
-	at org.testng.TestNG.run(TestNG.java:996)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
+<td></td>
 <td>0</td>
-<td>TestingScript.LoginTest@6e2829c7</td></tr>
+<td>TestingScript.LoginTest@394df057</td></tr>
 </table><p>
 </body>
 </html>

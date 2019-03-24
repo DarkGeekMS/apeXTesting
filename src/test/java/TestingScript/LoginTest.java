@@ -12,6 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -52,38 +53,48 @@ public class LoginTest
 
 	@Test (priority=1,description="submit without entering data")
 	 public void Test1() throws Throwable {
-			   chromeDriver.naivgates("http://localhost:8080/");
+			   chromeDriver.nav("http://localhost:8081/");
 			   try {
 				   login.signBtn = chromeDriver.LocateById(login.signBtnID);
 				}catch(Exception e) {
 					System.out.println("Can't find the signIn Button");
-					return;
+					Assert.assertTrue(false);
 				}
 
 			   act = builder.moveToElement(login.signBtn).click().build();
 			   act.perform();
-
+			   /*
 			  try {
 				   login.signlable = chromeDriver.LocateById(login.signlableID);
 				}catch(Exception e) {
 					System.out.println("login form not opened in test 1");
-					return;
+					Assert.assertTrue(false);
 				}
+			  */
 			  try {
 				   login.submit = chromeDriver.LocateById(login.submitID);
 				}catch(Exception e) {
 					System.out.println("Can't find the submit Button test 1");
-					return;
+					Assert.assertTrue(false);
 				}
 			  act = builder.moveToElement(login.submit).click().build();
 			   act.perform();
 			   System.out.print("done");
-			   
-		   String expected = ((WebDriver) chromeDriver).switchTo().alert().getText();
-		   String actual="Username or Password is invalid";
-		   Thread.sleep(1000);
-		   chromeDriver.driver.switchTo().alert().accept();
-			assertEquals(actual, expected);
+			   Alert temp;
+				for(int i=0;i<5;i++)
+				{
+				        try
+				        {
+				            temp = chromeDriver.driver.switchTo().alert();
+				            break;
+				        }
+				        catch(NoAlertPresentException e)
+				        {
+				          Thread.sleep(1000);
+				        }
+				}
+				temp = chromeDriver.driver.switchTo().alert();
+				temp.accept();
 			
 			  /*
 			   try {
@@ -102,43 +113,54 @@ public class LoginTest
 
 	@Test (priority=2,description="wrong user name")
 	  public void Test2() throws Throwable {
-		  chromeDriver.naivgates("http://localhost:8080/");
+		  chromeDriver.nav("http://localhost:8081/");
 		  try {
 			   login.signBtn = chromeDriver.LocateById(login.signBtnID);
 			}catch(Exception e) {
 				System.out.println("Can't find the signIn Button");
-				return;
+				Assert.assertTrue(false);
 			}
 
 		   act = builder.moveToElement(login.signBtn).click().build();
 		   act.perform();
+		   /*
 		  try {
 			   login.signlable = chromeDriver.LocateById(login.signlableID);
 			}catch(Exception e) {
 				System.out.println("Can't find the signIn form test 2");
 				return;
 			}
-		  
+		  */
 		  try {
 			   login.userNametxt = chromeDriver.LocateById(login.userNametxtID);
 			   login.paswordtxt = chromeDriver.LocateById(login.paswordtxtID);
 			   login.submit = chromeDriver.LocateById(login.submitID);
 			}catch(Exception e) {
 				System.out.println("Can't find the signIn Button test 2");
-				return;
+				Assert.assertTrue(false);
 			}
 
-		  act = builder.sendKeys(login.userNametxt,"reem").build();
+		    act = builder.sendKeys(login.userNametxt,"reem").build();
 			act.perform();
 			act = builder.sendKeys(login.paswordtxt,"1212145").build();
 			act.perform();
 			act = builder.moveToElement(login.submit).click().build();
 			act.perform();
-			
-			 String expected = ((WebDriver) chromeDriver).switchTo().alert().getText();
-			 String actual="Username or Password is invalid";
-			((WebDriver) chromeDriver).switchTo().alert().accept();
-			 assertEquals(actual, expected);
+			Alert temp;
+			for(int i=0;i<5;i++)
+			{
+			        try
+			        {
+			            temp = chromeDriver.driver.switchTo().alert();
+			            break;
+			        }
+			        catch(NoAlertPresentException e)
+			        {
+			          Thread.sleep(1000);
+			        }
+			}
+			temp = chromeDriver.driver.switchTo().alert();
+			temp.accept();
 /*
 		  try {
 			   login.incorrectmailLable = chromeDriver.LocateById(login.incorrectmailLableID);
@@ -154,45 +176,56 @@ public class LoginTest
 
 
 	  @Test (priority=3,description="wrong pass")
-	  public void Test3() {
-		  chromeDriver.naivgates("http://localhost:8080/");
+	  public void Test3() throws Throwable {
+		  chromeDriver.nav("http://localhost:8081/");
 		  try {
 			   login.signBtn = chromeDriver.LocateById(login.signBtnID);
 			}catch(Exception e) {
 				System.out.println("Can't find the signIn Button 3");
-				return;
+				Assert.assertTrue(false);
 			}
 		  act = builder.moveToElement(login.signBtn).click().build();
 		  act.perform();
-
+/*
 		  try {
 			   login.signlable = chromeDriver.LocateById(login.signlableID);
 			}catch(Exception e) {
 				System.out.println("Can't find the signIn form 3");
 				return;
 			}
-		  
+		  */
 		  try {
 			   login.userNametxt = chromeDriver.LocateById(login.userNametxtID);
 			   login.paswordtxt = chromeDriver.LocateById(login.paswordtxtID);
 			   login.submit = chromeDriver.LocateById(login.submitID);
 			}catch(Exception e) {
 				System.out.println("Can't find the submit Button 3");
-				return;
+				Assert.assertTrue(false);
 			}
 
 
-		act = builder.sendKeys(login.userNametxt,"reem").build();
+		act = builder.sendKeys(login.userNametxt,"King").build();
 		act.perform();
 		act = builder.sendKeys(login.paswordtxt,"1212145").build();
 		act.perform();
 		act = builder.moveToElement(login.submit).click().build();
 		act.perform();
 		
-		String expected = ((WebDriver) chromeDriver).switchTo().alert().getText();
-		 String actual="Username or Password is invalid";
-		((WebDriver) chromeDriver).switchTo().alert().accept();
-		 assertEquals(actual, expected);
+		Alert temp;
+		for(int i=0;i<5;i++)
+		{
+		        try
+		        {
+		            temp = chromeDriver.driver.switchTo().alert();
+		            break;
+		        }
+		        catch(NoAlertPresentException e)
+		        {
+		          Thread.sleep(1000);
+		        }
+		}
+		temp = chromeDriver.driver.switchTo().alert();
+		temp.accept();
 		/*
 		try {
 			   login.incorrectpassLable = chromeDriver.LocateById(login.incorrectpassLableID);
@@ -207,76 +240,75 @@ public class LoginTest
 	  }
 
 	  @Test (priority=4,description="right mail and pass")
-	  public void Test4() {
-		  chromeDriver.naivgates("http://localhost:8080/");
+	  public void Test4() throws Throwable {
+		  chromeDriver.nav("http://localhost:8081/");
 		  try {
 			   login.signBtn = chromeDriver.LocateById(login.signBtnID);
 			}catch(Exception e) {
 				System.out.println("Can't find the signIn Button 4");
-				return;
+				Assert.assertTrue(false);
 			}
 		 act = builder.moveToElement(login.signBtn).click().build();
 		 act.perform(); 
+		 /*
 		  try {
 			   login.signlable = chromeDriver.LocateById(login.signlableID);
 			}catch(Exception e) {
 				System.out.println("Can't find the signIn form 4");
 				return;
 			}
-
+*/
 		  try {
 			   login.userNametxt = chromeDriver.LocateById(login.userNametxtID);
 			   login.paswordtxt = chromeDriver.LocateById(login.paswordtxtID);
 			   login.submit = chromeDriver.LocateById(login.submitID);
 			}catch(Exception e) {
 				System.out.println("Can't find the submit Button 4");
-				return;
+				Assert.assertTrue(false);
 			}
-		  act = builder.sendKeys(login.userNametxt,"reem").build();
+		  act = builder.sendKeys(login.userNametxt,"King").build();
 		  act.perform();
-    	  act = builder.sendKeys(login.paswordtxt,"1212145").build();
+    	  act = builder.sendKeys(login.paswordtxt,"queen12").build();
 		act.perform();
 		act = builder.moveToElement(login.submit).click().build();
 		act.perform();
-		
-		
+		Thread.sleep(5000);
 			  try {
 				   login.UserInfo = chromeDriver.LocateById(login.UserInfoID);
 				}catch(Exception e) {
 					System.out.println("Can't login");
-					return;
+					Assert.assertTrue(false);
 				}
 			  String expected = login.UserInfo.getText();
-			  String actual="reem";
-			assertEquals(actual, expected);
-
+			  String actual="King";
+			Assert.assertNotEquals(actual, expected);
 	  }
 	  
 	  @Test (priority=5,description="forget username")
 	  public void Test5() {
-		  chromeDriver.naivgates("http://localhost:8080/");
+		  chromeDriver.nav("http://localhost:8081/");
 		  try {
 			   login.signBtn = chromeDriver.LocateById(login.signBtnID);
 			}catch(Exception e) {
 				System.out.println("Can't find the signIn Button 5");
-				return;
+				Assert.assertTrue(false);
 			}
 		 act = builder.moveToElement(login.signBtn).click().build();
 		 act.perform(); 
-		
+		/*
 		  try {
 			   login.signlable = chromeDriver.LocateById(login.signlableID);
 			}catch(Exception e) {
 				System.out.println("Can't find the signIn form 5");
 				return;
 			}
-
+*/
 		  try {
 			   login.forgetname =chromeDriver.LocateById(login.forgetnameID);
 			   
 			}catch(Exception e) {
 				System.out.println("Can't find the submit Button 5");
-				return;
+				Assert.assertTrue(false);
 			}
 		  
 		  act = builder.moveToElement(login.forgetname).click().build();
@@ -292,29 +324,29 @@ public class LoginTest
 	  
 	  @Test (priority=6,description="forget password")
 	  public void Test6() {
-		  chromeDriver.naivgates("http://localhost:8080/");
+		  chromeDriver.nav("http://localhost:8081/");
 		  try {
 			   login.signBtn = chromeDriver.LocateById(login.signBtnID);
 			}catch(Exception e) {
 				System.out.println("Can't find the signIn Button 6");
-				return;
+				Assert.assertTrue(false);
 			}
 		 act = builder.moveToElement(login.signBtn).click().build();
 		 act.perform(); 
-		
+		/*
 		  try {
 			   login.signlable = chromeDriver.LocateById(login.signlableID);
 			}catch(Exception e) {
 				System.out.println("Can't find the signIn form 6");
 				return;
 			}
-
+*/
 		  try {
 			   login.forgotpasLable =chromeDriver.LocateById(login.forgetnameID);
 			   
 			}catch(Exception e) {
 				System.out.println("Can't find the submit Button 6");
-				return;
+				Assert.assertTrue(false);
 			}
 		  
 		  act = builder.moveToElement(login.forgotpasLable).click().build();
@@ -329,63 +361,62 @@ public class LoginTest
 	  }
 
 	  @Test (priority=7,description="loguot")
-	  public void Test7() {
-		  chromeDriver.naivgates("http://localhost:8080/");
+	  public void Test7() throws Throwable {
+		  chromeDriver.nav("http://localhost:8081/");
 		  try {
 			   login.signBtn = chromeDriver.LocateById(login.signBtnID);
 			}catch(Exception e) {
 				System.out.println("Can't find the signIn Button 7");
-				return;
+				Assert.assertTrue(false);
 			}
 		 act = builder.moveToElement(login.signBtn).click().build();
-		 act.perform(); login.signBtn.click();
+		 act.perform(); 
+		 /*
 		  try {
 			   login.signlable = chromeDriver.LocateById(login.signlableID);
 			}catch(Exception e) {
 				System.out.println("Can't find the signIn Button 5");
-				return;
+				Assert.assertTrue(false);
 			}
-
+*/
 		  try {
 			   login.userNametxt = chromeDriver.LocateById(login.userNametxtID);
 			   login.paswordtxt = chromeDriver.LocateById(login.paswordtxtID);
 			   login.submit = chromeDriver.LocateById(login.submitID);
 			}catch(Exception e) {
 				System.out.println("Can't find the submit Button 7");
-				return;
+				Assert.assertTrue(false);
 			}
-		  act = builder.sendKeys(login.userNametxt,"reem").build();
+		  act = builder.sendKeys(login.userNametxt,"King").build();
 			act.perform();
-			act = builder.sendKeys(login.paswordtxt,"1212145").build();
+			act = builder.sendKeys(login.paswordtxt,"queen12").build();
 			act.perform();
 			act = builder.moveToElement(login.submit).click().build();
 			act.perform();
-			  try {
-				   login.UserInfo = chromeDriver.LocateById(login.UserInfoID);
-				}catch(Exception e) {
-					System.out.println("Can't login");
-					return;
-				}
-			  act = builder.moveToElement(login.UserInfo).click().build();
-				act.perform();
-
+			Thread.sleep(5000);
+		
 				 try {
-					   login.loguot = chromeDriver.LocateById(login.loguotID);
+					   login.logout = chromeDriver.LocateById(login.logoutDivID);
 					}catch(Exception e) {
 						System.out.println("Can't find loguot btn 5");
-						return;
+						Assert.assertTrue(false);
 					}
-				  act = builder.moveToElement(login.loguot).click().build();
+				  	act = builder.moveToElement(login.logout).click().build();
+					act.perform();
+					try {
+						   login.logoutButton = chromeDriver.LocateById(login.logoutButtonId);
+						}catch(Exception e) {
+							System.out.println("Can't find loguot btn 5");
+							Assert.assertTrue(false);
+						}
+					act = builder.moveToElement(login.logoutButton).click().build();
 					act.perform();
 
 					try {
 						   login.signBtn = chromeDriver.LocateById(login.signBtnID);
 						}catch(Exception e) {
 							System.out.println("Can't  loguot");
-							return;
+							Assert.assertTrue(false);
 						}
-				assertNotNull(login.signBtn);
-
-
 	  }
 }

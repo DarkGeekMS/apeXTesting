@@ -17,8 +17,11 @@ public class LoginPage {
 	public WebElement UserInfo;
 	public WebElement signlable;
 	public WebElement emailtxt;
-	public WebElement loguot;
-	public String loguotID;
+	public WebElement logout;
+	public WebElement logoutButton;
+	
+	public String logoutDivID;
+	public String logoutButtonId;
 	public String signBtnID;
 	public String submitID;
 	public String userNametxtID;
@@ -33,17 +36,17 @@ public class LoginPage {
 	public LoginPage()
 	{
 		signBtnID = "LoginBTN";
-		submitID= "submit";
-		userNametxtID = "usernametxt";
+		submitID= "LoginButton";
+		userNametxtID = "usernamextxt";
 		paswordtxtID = "password";
 		forgotpasLableID = "forgetpass";
 		forgetnameID = "forgetname";
 		incorrectpassLableID = "incorrectpass";
 		incorrectmailLableID = "incorrectmail";
-		UserInfoID = "loggedbutton";
+		UserInfoID = "logoutPic";
 		signlableID = "signlable";
-		loguotID="";
-		
+		logoutDivID="loggedbutton";
+		logoutButtonId = "logOut";
 	}
 	
 	

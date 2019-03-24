@@ -16,7 +16,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class Chrome {
 	public WebDriver driver;
-	File driverpath =new File ("C://Users//future//apeXproject//driver//chromedriver.exe"); //add link of the driver
+	File driverpath =new File ("driver/chromedriver.exe"); //add link of the driver
 	WebDriverWait wait;
 
 	public Chrome () 
@@ -35,8 +35,7 @@ public class Chrome {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(Id)));
 		return (driver.findElement(By.id(Id)));
 	}
-	
-	public void naivgates(String url)
+	public void nav(String url)
 	{
 		this.driver.navigate().to(url);
 	}

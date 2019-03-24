@@ -5,4 +5,14 @@
       <class name="TestingScript.LoginTest"/>
     </classes>
   </test> <!-- Test -->
+  <test name="Test1">
+    <classes>
+      <class name="TestingScript.SignUpTest"/>
+    </classes>
+  </test> <!-- Test -->
+  <test name="Test2">
+    <classes>
+      <class name="TestingScript.PostTest"/>
+    </classes>
+  </test> <!-- Test -->
 </suite> <!-- Suite -->
