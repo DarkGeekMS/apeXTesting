@@ -1,4 +1,4 @@
-/target/
-/driver/
-/test-outputs/
-/.settings/
+/target/*
+/driver/*
+/test-outputs/*
+/.settings/*
