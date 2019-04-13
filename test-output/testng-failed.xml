@@ -4,18 +4,9 @@
   <test thread-count="5" name="Test(failed)">
     <classes>
       <class name="TestingScript.LoginTest">
+
         <methods>
-          <include name="finalize"/>
-          <include name="Test7"/>
-          <include name="BeforeClass"/>
-        </methods>
-      </class> <!-- TestingScript.LoginTest -->
-    </classes>
-  </test> <!-- Test(failed) -->
-  <test thread-count="5" name="Test1(failed)">
-    <classes>
-      <class name="TestingScript.SignUpTest">
-        <methods>
+          <include name="Test5"/>
           <include name="finalize"/>
           <include name="init"/>
           <include name="test5"/>
