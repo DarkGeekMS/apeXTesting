@@ -12,7 +12,6 @@ public class LoginPage {
 	public WebElement paswordtxt;
 	public WebElement forgotpasLable;
 	public WebElement forgetname;
-	public WebElement incorrectpassLable;
 	public WebElement incorrectmailLable;
 	public WebElement UserInfo;
 	public WebElement signlable;
@@ -28,7 +27,6 @@ public class LoginPage {
 	public String paswordtxtID;
 	public String forgotpasLableID;
 	public String forgetnameID;
-	public String incorrectpassLableID;
 	public String incorrectmailLableID;
 	public String UserInfoID;
 	public String signlableID;
@@ -41,7 +39,6 @@ public class LoginPage {
 		paswordtxtID = "password";
 		forgotpasLableID = "forgetpass";
 		forgetnameID = "forgetname";
-		incorrectpassLableID = "incorrectpass";
 		incorrectmailLableID = "incorrectmail";
 		UserInfoID = "logoutPic";
 		signlableID = "signlable";
