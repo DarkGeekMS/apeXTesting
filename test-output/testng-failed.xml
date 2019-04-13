@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]">
-  <test name="Default test(failed)">
+<suite name="Failed suite [Suite]">
+  <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="TestingScript.PostTest">
+      <class name="TestingScript.LoginTest">
+        <methods>
+          <include name="finalize"/>
+          <include name="Test7"/>
+          <include name="BeforeClass"/>
+        </methods>
+      </class> <!-- TestingScript.LoginTest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+  <test thread-count="5" name="Test1(failed)">
+    <classes>
+      <class name="TestingScript.SignUpTest">
         <methods>
           <include name="finalize"/>
           <include name="init"/>
-          <include name="test10"/>
+          <include name="test5"/>
+          <include name="test2"/>
+          <include name="test7"/>
+          <include name="test6"/>
         </methods>
-      </class> <!-- TestingScript.PostTest -->
+      </class> <!-- TestingScript.SignUpTest -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Test1(failed) -->
+</suite> <!-- Failed suite [Suite] -->

@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.AfterSuite;
 
-public class subredditTest{
+public class subredditTest extends BaseTest{
   @Test
   public void f() {
   }
