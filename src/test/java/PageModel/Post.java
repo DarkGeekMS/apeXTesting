@@ -4,24 +4,25 @@ import org.openqa.selenium.WebElement;
 
 public class Post {
 	public WebElement FullPost;
-	public WebElement PostRow;
-	public WebElement PostCol1;
-	public WebElement PostCol2;
+	public WebElement PostBody;
+	public WebElement PostFooter;
 	public WebElement CommentButton;
 	public WebElement PostSaveButton;
 	public WebElement PostUpVote;
 	public WebElement PostDownVote;
 	public WebElement PostExtra;
+	public WebElement HideIcon;
 	public WebElement PostVote;
 	public WebElement PostContent;
-	public WebElement HideIcon;
+	public WebElement time;
 	public WebElement CommentSpace;
 	public WebElement InnerCommentButton;
 	public WebElement Comment;
+	public WebElement User;
+	public WebElement SubReddit;
+	
 	public String FullPostId;
-	public String PostRowId;
-	public String PostCol1Id;
-	public String PostCol2Id;
+	public String PostBodyId;
 	public String CommentButtonId;
 	public String PostSaveButtonId;
 	public String PostUpVoteId;
@@ -29,16 +30,17 @@ public class Post {
 	public String PostExtraId;
 	public String PostVoteId;
 	public String PostContentId;
-	public String HideIconId;
+	public String TimeId;
+	public String UserId;
+	public String SubRedditId;
+	
 	public String CommentSpaceId;
 	public String InnerCommentButtonId;
 	public String CommentId;
 	public Post()
 	{
-		FullPostId = "PostItme";
-		PostRowId = "postRow";
-		PostCol1Id = "postCol1";
-		PostCol2Id = "postCol2";
+		FullPostId = "postCol2";
+		PostBodyId = "postBody";
 		CommentButtonId = "commentButton";
 		PostSaveButtonId = "SaveButton";
 		PostUpVoteId = "up";
@@ -46,8 +48,10 @@ public class Post {
 		PostExtraId = "DropButton";
 		PostVoteId = "PostVote";
 		PostContentId = "PostContent";
-		HideIconId = "HideIcon";
-		CommentSpaceId = "CommentSpace";
+		TimeId = "timeAgo";
+		UserId = "user";
+		SubRedditId = "subred";
+		
 		InnerCommentButtonId = "InnerCommentButton";
 		CommentId = "Comment";
 	}
