@@ -35,6 +35,12 @@ public class Chrome {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(Id)));
 		return (driver.findElement(By.id(Id)));
 	}
+	public WebElement LocateByXpath(String xpath) throws InterruptedException
+	{
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+		return (driver.findElement(By.xpath(xpath)));
+	}
+	
 	public void nav(String url)
 	{
 		this.driver.navigate().to(url);
