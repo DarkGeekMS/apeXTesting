@@ -1,3 +1,6 @@
+
+
+
 package PageModel;
 
 import org.openqa.selenium.WebElement;
@@ -18,7 +21,7 @@ public class LoginPage {
 	public WebElement emailtxt;
 	public WebElement logout;
 	public WebElement logoutButton;
-	
+
 	public String logoutDivID;
 	public String logoutButtonId;
 	public String signBtnID;
@@ -30,7 +33,7 @@ public class LoginPage {
 	public String incorrectmailLableID;
 	public String UserInfoID;
 	public String signlableID;
-	
+
 	public LoginPage()
 	{
 		signBtnID = "LoginBTN";
@@ -45,9 +48,9 @@ public class LoginPage {
 		logoutDivID="loggedbutton";
 		logoutButtonId = "logOut";
 	}
-	
-	
-	
-	
-	
+
+
+
+
+
 }
