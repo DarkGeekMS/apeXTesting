@@ -15,4 +15,14 @@
       <class name="TestingScript.PostTest"/>
     </classes>
   </test> <!-- Test -->
+  <test name="Test3">
+    <classes>
+      <class name="TestingScript.apexcomTest"/>
+    </classes>
+  </test> <!-- Test -->
+  <test name="Test4">
+    <classes>
+      <class name="TestingScript.navigationTest"/>
+    </classes>
+  </test> <!-- Test -->
 </suite> <!-- Suite -->

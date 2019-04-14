@@ -2,6 +2,7 @@ package DriverDef;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
@@ -18,14 +19,15 @@ public class Chrome {
 	public WebDriver driver;
 	File driverpath =new File ("driver/chromedriver.exe"); //add link of the driver
 	WebDriverWait wait;
-
+	public String Url;
 	public Chrome () 
 	{
 		System.setProperty("webdriver.chrome.driver",driverpath.getAbsolutePath());//write value of this driver
 		this.driver=new ChromeDriver(); // here you connected the driver by option
 		wait = new WebDriverWait(driver, 20);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();   /// maximize screen
-
+		Url="http://localhost:8080";
 	}
 	
 	

@@ -5,10 +5,7 @@ import org.openqa.selenium.WebElement;
 public class navigation {
 	public String HomeLink;
 	public String apexcomLink;
-	public String apexcomPostsLink;
 	public String UserProfileLink;
-	public String userLink;
-	public String usersettingLink;
 	public String creatpostlink;
 	
 	public WebElement signBtn;
@@ -38,11 +35,9 @@ public class navigation {
 
 	public navigation()
 	{
-		HomeLink = "http://localhost:8080/";
-		apexcomLink= "http://localhost:8080/ApexCom/555";
-		apexcomPostsLink = "http://localhost:8080/ApexCom/555/ApexPosts";
-		UserProfileLink = "http://localhost:8080/userprofile/ayatmostafa";
-		userLink = "http://localhost:8080/ayatmostafa";
+		HomeLink = "http://localhost:8080";
+		apexcomLink= "http://localhost:8080/ApexCom/";
+		UserProfileLink = "http://localhost:8080/userprofile/";
 		creatpostlink="http://localhost:8080/Submit";
 		signBtnID = "LoginBTN";
 		SignUpButtonId = "SignUp";
@@ -56,7 +51,6 @@ public class navigation {
 		logoutButtonId = "logOut";
 		postclass="btn btn-primary ";
 	}
-
 }
 
 
