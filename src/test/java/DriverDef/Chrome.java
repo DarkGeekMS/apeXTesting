@@ -27,7 +27,7 @@ public class Chrome {
 		wait = new WebDriverWait(driver, 20);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();   /// maximize screen
-		Url="http://localhost:8080";
+		Url= System.getenv("SERVER_URL");
 	}
 	
 	
