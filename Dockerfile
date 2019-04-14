@@ -8,4 +8,5 @@ RUN chmod +x /usr/src/mymaven/driver/chromedriver.exe
 ARG SERVER_URL
 ENV SERVER_URL=${SERVER_URL}
 
-CMD mvn clean install
+#CMD mvn clean install
+CMD mvn test
