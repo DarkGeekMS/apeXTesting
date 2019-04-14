@@ -17,7 +17,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class Chrome {
 	public WebDriver driver;
-	File driverpath =new File ("driver/chromedriver.exe"); //add link of the driver
+	File driverpath =new File ("driver/chromedriver"); //add link of the driver
 	WebDriverWait wait;
 	public String Url;
 	public Chrome () 
