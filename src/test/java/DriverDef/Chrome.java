@@ -17,11 +17,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class Chrome {
 	public WebDriver driver;
-	File driverpath =new File ("driver/chromedriver"); //add link of the driver
 	WebDriverWait wait;
 	public String Url;
-	public Chrome () 
-	{
+
+	public Chrome () {
+		boolean isWindows = System.getProperty("os.name").toLowerCase().contains("win");
+		File driverpath =new File ("driver/chromedriver" + isWindows? ".exe":""); //add link of the driver
 		System.setProperty("webdriver.chrome.driver",driverpath.getAbsolutePath());//write value of this driver
 		this.driver=new ChromeDriver(); // here you connected the driver by option
 		wait = new WebDriverWait(driver, 20);
