@@ -1,5 +1,5 @@
 /driver/
-/test-outputs/
+*test-output*/**
 /.settings/
 /.classpath
 /.project
