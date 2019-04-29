@@ -530,7 +530,7 @@ public class SignUpTest {
 			Reporter.log("Missing Elements in SignUp1 Page");
 			Assert.assertTrue(false);
 		}
-		act = builder.sendKeys(page.Email,"deepooom@live.com").build();
+		act = builder.sendKeys(page.Email,"deepooom98@live.com").build();
 		act.perform();
 		act = builder.moveToElement(page.Next).click().build();
 		act.perform();
@@ -544,7 +544,7 @@ public class SignUpTest {
 			Reporter.log("Missing Elements in SignUp2 Page");
 			Assert.assertTrue(false);
 		}
-		act = builder.sendKeys(page.UserName,"Deepoom112").build();
+		act = builder.sendKeys(page.UserName,"Deepoom98112").build();
 		act.perform();
 		act = builder.sendKeys(page.Password,"mohamed").build();
 		act.perform();

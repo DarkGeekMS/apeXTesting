@@ -35,10 +35,10 @@ public class navigation {
 
 	public navigation()
 	{
-		HomeLink = "http://localhost:8080";
-		apexcomLink= "http://localhost:8080/ApexCom/";
-		UserProfileLink = "http://localhost:8080/userprofile/";
-		creatpostlink="http://localhost:8080/Submit";
+		HomeLink = "http://35.232.3.8/";
+		apexcomLink= "http://35.232.3.8/ApexCom/";
+		UserProfileLink = "http://35.232.3.8/userprofile/";
+		creatpostlink="http://35.232.3.8/Submit";
 		signBtnID = "LoginBTN";
 		SignUpButtonId = "SignUp";
 		postTextid="postBody";

@@ -102,7 +102,7 @@ public class LoginTest
 			Reporter.log("Can't find the signIn Button test 2");
 			Assert.assertTrue(false);
 		}
-	    act = builder.sendKeys(login.userNametxt,"reem11").build();
+	    act = builder.sendKeys(login.userNametxt,"reem1641").build();
 		act.perform();
 		act = builder.sendKeys(login.paswordtxt,"1212145").build();
 		act.perform();
@@ -299,32 +299,6 @@ public class LoginTest
 	  	String expected = login.UserInfo.getText();
 	  	String actual="King";
 		Assert.assertEquals(actual, expected);
-		//logout
-		Thread.sleep(5000);
-		try {
-			login.logout = chromeDriver.LocateById(login.logoutDivID);
-		}catch(Exception e) {
-			Reporter.log("Can't find loguot btn 5");
-			Assert.assertTrue(false);
-		}
-	  	act = builder.moveToElement(login.logout).click().build();
-		act.perform();
-		Thread.sleep(1000);
-		try {
-			login.logoutButton = chromeDriver.LocateByXpath("//div[@id='loggedDiv']/ul/li[5]");
-		}catch(Exception e) {
-			Reporter.log("Can't find loguot btn 5");
-			Assert.assertTrue(false);
-		}
-		act = builder.moveToElement(login.logoutButton).click().build();
-		act.perform();
-		Thread.sleep(1000);
-		try {
-			login.signBtn = chromeDriver.LocateById(login.signBtnID);
-		}catch(Exception e) {
-			Reporter.log("Can't  loguot");
-			Assert.assertTrue(false);
-		}
   }
 	  
 }
