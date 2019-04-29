@@ -1,0 +1,40 @@
+{
+    "personalizations": [
+        {
+            "to": [
+                {
+                    "email": "mido3ds@gmail.com"
+                },
+                {
+                    "email": "mohamedshawky911@gmail.com"
+                },
+                {
+                    "email": "marcnagui@gmail.com"
+                },
+                {
+                    "email": "mohamed1989877@gmail.com"
+                },
+                {
+                    "email": "remondatalaat21@gmail.com"
+                }
+            ]
+        }
+    ],
+    "from": {
+        "email": "devops-noreply@goapex.online",
+        "name": "Apex DevOps"
+    },
+    "subject": "<EMAIL_SUBJECT>",
+    "content": [
+        {
+            "type": "text/plain",
+            "value": "<EMAIL_CONTENT>"
+        }
+    ],
+    "attachments": [
+        {
+            "content": "<FILE_CONTENT>",
+            "filename": "<FILE_NAME>"
+        }
+    ]
+}
