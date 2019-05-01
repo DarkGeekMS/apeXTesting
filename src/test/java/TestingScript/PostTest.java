@@ -30,13 +30,13 @@ public class PostTest {
 		post = new Post();
 		login = new LoginPage();
 		builder = new Actions(driver.driver);
-		Reporter.log("Post test starts");
+		System.out.println("Post test starts");
 	}
 	@AfterClass
 	public void finalize()
 	{
 		driver.shutdown();
-		Reporter.log("Post test ends");
+		System.out.println("Post test ends");
 	}
 	
 	@Test(priority=0,description="Press on every part of a post and check if it opens it or not(works for logged person or not)")
@@ -50,13 +50,13 @@ public class PostTest {
 			Thread.sleep(1000);
 			try {
 				driver.LocateById(post.PostContentId);
-				Reporter.log("clicking Full post worked");
+				System.out.println("clicking Full post worked");
 			}catch(Exception e) {
-				Reporter.log("Test 1 failed Didn't open While clicking on Full post");
+				System.out.println("Test 1 failed Didn't open While clicking on Full post");
 				Assert.assertTrue(false);
 			}
 		}catch(Exception e) {
-			Reporter.log("can't Find Full Post Element");
+			System.out.println("can't Find Full Post Element");
 			Assert.assertTrue(false);
 		}
 		driver.nav(driver.Url);
@@ -68,13 +68,13 @@ public class PostTest {
 			Thread.sleep(1000);
 			try {
 				driver.LocateById(post.PostContentId);
-				Reporter.log("Clicking on Post Body worked");
+				System.out.println("Clicking on Post Body worked");
 			}catch(Exception e) {
-				Reporter.log("Test 1 failed Didn't open While clicking on post's Body");
+				System.out.println("Test 1 failed Didn't open While clicking on post's Body");
 				Assert.assertTrue(false);
 			}
 		}catch(Exception e) {
-			Reporter.log("can't Find post body");
+			System.out.println("can't Find post body");
 			Assert.assertTrue(false);
 		}
 		driver.nav(driver.Url);
@@ -86,11 +86,11 @@ public class PostTest {
 			Thread.sleep(1000);
 			try {
 				driver.LocateById(post.PostContentId);
-				Reporter.log("clicking post time worked");
+				System.out.println("clicking post time worked");
 			}catch(Exception e) {
-				Reporter.log("Test 1 failed Didn't open While clicking on post's time");			}
+				System.out.println("Test 1 failed Didn't open While clicking on post's time");			}
 		}catch(Exception e) {
-			Reporter.log("can't Find post's time");
+			System.out.println("can't Find post's time");
 			Assert.assertTrue(false);
 		}
 		driver.nav(driver.Url);
@@ -102,13 +102,13 @@ public class PostTest {
 			Thread.sleep(1000);
 			try {
 				driver.LocateById(post.PostContentId);
-				Reporter.log("clicking footer of post worked");
+				System.out.println("clicking footer of post worked");
 			}catch(Exception e) {
-				Reporter.log("Test 1 failed Didn't open While clicking on post's footer");
+				System.out.println("Test 1 failed Didn't open While clicking on post's footer");
 				Assert.assertTrue(false);
 			}
 		}catch(Exception e) {
-			Reporter.log("can't Find post's footer Element");
+			System.out.println("can't Find post's footer Element");
 			Assert.assertTrue(false);
 		}
 		driver.nav(driver.Url);
@@ -120,13 +120,13 @@ public class PostTest {
 			Thread.sleep(1000);
 			try {
 				driver.LocateById(post.PostContentId);
-				Reporter.log("clicking Comment Button worked");
+				System.out.println("clicking Comment Button worked");
 			}catch(Exception e) {
-				Reporter.log("Test 1 failed Didn't open While clicking on Comment Button");
+				System.out.println("Test 1 failed Didn't open While clicking on Comment Button");
 				Assert.assertTrue(false);
 			}
 		}catch(Exception e) {
-			Reporter.log("can't Find Comment Button");
+			System.out.println("can't Find Comment Button");
 			Assert.assertTrue(false);
 		}
 		driver.nav(driver.Url);
@@ -138,16 +138,16 @@ public class PostTest {
 			Thread.sleep(1000);
 			try {
 				driver.LocateById(post.PostContentId);
-				Reporter.log("clicking Vote Counter of post worked");
+				System.out.println("clicking Vote Counter of post worked");
 			}catch(Exception e) {
-				Reporter.log("Test 1 failed Didn't open While clicking on post's Vote Counter");
+				System.out.println("Test 1 failed Didn't open While clicking on post's Vote Counter");
 				Assert.assertTrue(false);
 			}
 		}catch(Exception e) {
-			Reporter.log("can't Find Vote Counter Element");
+			System.out.println("can't Find Vote Counter Element");
 			Assert.assertTrue(false);
 		}
-		Reporter.log("Test 1 passed");
+		System.out.println("Test 1 passed");
 	}
 	
 	@Test(priority=1,description="Check save")
@@ -158,17 +158,23 @@ public class PostTest {
 		try {
 			post.PostSaveButton = driver.LocateById(post.PostSaveButtonId);
 		}catch(Exception e) {
-			Reporter.log("Save Button Not Found");
+			System.out.println("Save Button Not Found");
 			Assert.assertTrue(false);
 		}
 		String before = post.PostSaveButton.getText();
 		act = builder.moveToElement(post.PostSaveButton).click().build();
 		act.perform();
-		Thread.sleep(1000);
+		Thread.sleep(3000);
+		try {
+			post.Message = driver.LocateByXpath("/html/body/div[2]/div/div[2]/div/button");
+		}catch(Exception e) {
+			System.out.println("Can't find Success Message");
+			Assert.assertTrue(false);
+		}
 		String after = post.PostSaveButton.getText();
 		Assert.assertNotEquals(before, after);
 		}
-		Reporter.log("Test 2 passed");
+		System.out.println("Test 2 passed");
 	}
 	@Test(priority=2,description="Check Hide")
 	public void test3() throws Throwable {
@@ -177,7 +183,7 @@ public class PostTest {
 		try {
 			post.PostExtra = driver.LocateById(post.PostExtraId);
 		}catch(Exception e) {
-			Reporter.log("Expand Arrow Doesn't Exist");
+			System.out.println("Expand Arrow Doesn't Exist");
 			Assert.assertTrue(false);
 		}
 		act = builder.moveToElement(post.PostExtra).click().build();
@@ -186,28 +192,19 @@ public class PostTest {
 		try {
 			post.HideIcon = driver.LocateByXpath("//div[@id='post']//a[@class='HIDE']");
 		}catch(Exception e) {
-			Reporter.log("Hide Icon Doesn't Exist");
+			System.out.println("Hide Icon Doesn't Exist");
 			Assert.assertTrue(false);
 		}
 		act = builder.moveToElement(post.HideIcon).click().build();
 		act.perform();
-		Thread.sleep(1000);
-		Alert msg;
-		for(int i=0;i<5;i++)
-		{
-		        try
-		        {
-		            msg = driver.driver.switchTo().alert();
-		            break;
-		        }
-		        catch(NoAlertPresentException e)
-		        {
-		          Thread.sleep(1000);
-		        }
+		Thread.sleep(3000);
+		try {
+			post.Message = driver.LocateByXpath("/html/body/div[2]/div/div[2]/div/button");
+		}catch(Exception e) {
+			System.out.println("Can't find Success Message");
+			Assert.assertTrue(false);
 		}
-		msg = driver.driver.switchTo().alert();
-		msg.accept();
-		Reporter.log("Test 3 Passed");
+		System.out.println("Test 3 Passed");
 	}
 	
 	/*
@@ -218,7 +215,7 @@ public class PostTest {
 		try {
 			post.FullPost = driver.LocateById(post.FullPostId);
 		}catch(Exception e) {
-			Reporter.log("can't Find Full Post Element");
+			System.out.println("can't Find Full Post Element");
 			Assert.assertTrue(false);
 		}
 		act = builder.moveToElement(post.FullPost).click().build();
@@ -226,14 +223,14 @@ public class PostTest {
 		try {
 			post.PostContent = driver.LocateById(post.PostContentId);
 		}catch(Exception e) {
-			Reporter.log("Didn't Open Post");
+			System.out.println("Didn't Open Post");
 			Assert.assertTrue(false);
 		}
 		try {
 			post.CommentSpace = driver.LocateById(post.CommentSpaceId);
 			post.InnerCommentButton = driver.LocateById(post.InnerCommentButtonId);
 		}catch(Exception e) {
-			Reporter.log("Can't Find Post Area");
+			System.out.println("Can't Find Post Area");
 			Assert.assertTrue(false);
 		}
 		act =builder.sendKeys(post.CommentSpace,"Hello World").build();
@@ -264,7 +261,7 @@ public class PostTest {
 		try {
 			   login.signBtn = driver.LocateById(login.signBtnID);
 		}catch(Exception e) {
-				Reporter.log("Can't find the signIn Button");
+				System.out.println("Can't find the signIn Button");
 				Assert.assertTrue(false);
 		}
 		act = builder.moveToElement(login.signBtn).click().build();
@@ -274,7 +271,7 @@ public class PostTest {
 		   login.paswordtxt = driver.LocateById(login.paswordtxtID);
 		   login.submit = driver.LocateById(login.submitID);
 		}catch(Exception e) {
-			Reporter.log("Missed Elements in Login Form");
+			System.out.println("Missed Elements in Login Form");
 			Assert.assertTrue(false);
 		  }
 		act = builder.sendKeys(login.userNametxt,"King").build();
@@ -287,7 +284,7 @@ public class PostTest {
 		try {
 			post.FullPost = driver.LocateById(post.FullPostId);
 		}catch(Exception e) {
-			Reporter.log("can't Find Full Post Element");
+			System.out.println("can't Find Full Post Element");
 			Assert.assertTrue(false);
 		}
 		act = builder.moveToElement(post.FullPost).click().build();
@@ -295,14 +292,14 @@ public class PostTest {
 		try {
 			post.PostContent = driver.LocateById(post.PostContentId);
 		}catch(Exception e) {
-			Reporter.log("Didn't Open Post");
+			System.out.println("Didn't Open Post");
 			Assert.assertTrue(false);
 		}
 		try {
 			post.CommentSpace = driver.LocateById(post.CommentSpaceId);
 			post.InnerCommentButton = driver.LocateById(post.InnerCommentButtonId);
 		}catch(Exception e) {
-			Reporter.log("Can't Find Post Area");
+			System.out.println("Can't Find Post Area");
 			Assert.assertTrue(false);
 		}
 		act =builder.sendKeys(post.CommentSpace,"Hello World").build();
@@ -314,13 +311,13 @@ public class PostTest {
 			post.Comment = driver.LocateById(post.CommentId);
 			temp = driver.LocateById("paragraphComment");
 		}catch(Exception e) {
-			Reporter.log("Falied To Comment");
+			System.out.println("Falied To Comment");
 			Assert.assertTrue(false);
 		}
 		String expected = "Hello World";
 		String Actual = temp.getText();
 		Assert.assertEquals(Actual, expected);
-		Reporter.log("Commented Successfully");
+		System.out.println("Commented Successfully");
 	}
 	@Test(priority=5,description="empty Comment After Logging In")
 	public void test6() throws Throwable{
@@ -329,7 +326,7 @@ public class PostTest {
 		try {
 			   login.signBtn = driver.LocateById(login.signBtnID);
 		}catch(Exception e) {
-				Reporter.log("Can't find the signIn Button");
+				System.out.println("Can't find the signIn Button");
 				Assert.assertTrue(false);
 		}
 		act = builder.moveToElement(login.signBtn).click().build();
@@ -339,7 +336,7 @@ public class PostTest {
 		   login.paswordtxt = driver.LocateById(login.paswordtxtID);
 		   login.submit = driver.LocateById(login.submitID);
 		}catch(Exception e) {
-			Reporter.log("Missed Elements in Login Form");
+			System.out.println("Missed Elements in Login Form");
 			Assert.assertTrue(false);
 		  }
 		act = builder.sendKeys(login.userNametxt,"King").build();
@@ -352,7 +349,7 @@ public class PostTest {
 		try {
 			post.FullPost = driver.LocateById(post.FullPostId);
 		}catch(Exception e) {
-			Reporter.log("can't Find Full Post Element");
+			System.out.println("can't Find Full Post Element");
 			Assert.assertTrue(false);
 		}
 		act = builder.moveToElement(post.FullPost).click().build();
@@ -360,14 +357,14 @@ public class PostTest {
 		try {
 			post.PostContent = driver.LocateById(post.PostContentId);
 		}catch(Exception e) {
-			Reporter.log("Didn't Open Post");
+			System.out.println("Didn't Open Post");
 			Assert.assertTrue(false);
 		}
 		try {
 			post.CommentSpace = driver.LocateById(post.CommentSpaceId);
 			post.InnerCommentButton = driver.LocateById(post.InnerCommentButtonId);
 		}catch(Exception e) {
-			Reporter.log("Can't Find Post Area");
+			System.out.println("Can't Find Post Area");
 			Assert.assertTrue(false);
 		}
 		act =builder.sendKeys(post.CommentSpace,"").build();
@@ -389,7 +386,7 @@ public class PostTest {
 		}
 		msg = driver.driver.switchTo().alert();
 		msg.accept();
-		Reporter.log("empty Comment test passed");
+		System.out.println("empty Comment test passed");
 	}
 	*/
 	@Test(priority=6,description="Voting Test")
@@ -401,7 +398,7 @@ public class PostTest {
 			post.PostDownVote = driver.LocateById(post.PostDownVoteId);
 			post.PostVote = driver.LocateById(post.PostVoteId);
 		}catch(Exception e) {
-			Reporter.log("Post Not Found");
+			System.out.println("Post Not Found");
 			Assert.assertTrue(false);
 		}
 		act = builder.moveToElement(post.PostUpVote).click().build();
@@ -432,7 +429,7 @@ public class PostTest {
 		try {
 			post.User = driver.LocateById(post.UserId);
 		}catch(Exception e) {
-			Reporter.log("Can't find the link");
+			System.out.println("Can't find the link");
 			Assert.assertTrue(false);
 		}
 		String UserName = post.User.getText();
@@ -442,7 +439,7 @@ public class PostTest {
 		String Url = driver.driver.getCurrentUrl();
 		String Expected = driver.Url + "/userprofile/" + UserName ;
 		Assert.assertEquals(Expected, Url);
-		Reporter.log("User Profile is correct");
+		System.out.println("User Profile is correct");
 	}
 	
 	//testing ApexCom button
@@ -453,7 +450,7 @@ public class PostTest {
 		try {
 			post.SubReddit = driver.LocateById(post.SubRedditId);
 		}catch(Exception e) {
-			Reporter.log("Can't find the link");
+			System.out.println("Can't find the link");
 			Assert.assertTrue(false);
 		}
 		String Sub = post.SubReddit.getText();
@@ -463,7 +460,7 @@ public class PostTest {
 		String Url = driver.driver.getCurrentUrl();
 		String Expected = driver.Url + "/ApexCom/" + Sub ;
 		Assert.assertEquals(Expected, Url);
-		Reporter.log("ApexCom is correct, Test 9 Passed");
+		System.out.println("ApexCom is correct, Test 9 Passed");
 	}
 	
 	@Test(priority=9,description="Create post's Button without Login")
@@ -474,7 +471,7 @@ public class PostTest {
 		  try {
 		  CreatePost = driver.LocateByXpath("//*[@id='main']/button[1]");
 		  }catch(Exception e) {
-			  Reporter.log("Can't find creation button");
+			  System.out.println("Can't find creation button");
 			  Assert.assertTrue(false);
 		  }
 		  act = builder.moveToElement(CreatePost).click().build();
@@ -483,10 +480,10 @@ public class PostTest {
 		  try {
 			  login.signBtn = driver.LocateById(login.signBtnID);
 		  }catch(Exception e) {
-			  Reporter.log("Didn't open Login Form");
+			  System.out.println("Didn't open Login Form");
 			  Assert.assertTrue(false);
 		  }
-		  Reporter.log("Create Post Without Login passed");
+		  System.out.println("Create Post Without Login passed");
 	}
 	
 	@Test(priority=10,description="Create post's Button with Login")
@@ -496,7 +493,7 @@ public class PostTest {
 		  try {
 			   login.signBtn = driver.LocateById(login.signBtnID);
 			}catch(Exception e) {
-				Reporter.log("Can't find the signIn Button");
+				System.out.println("Can't find the signIn Button");
 				Assert.assertTrue(false);
 			}
 		 act = builder.moveToElement(login.signBtn).click().build();
@@ -507,7 +504,7 @@ public class PostTest {
 			   login.paswordtxt = driver.LocateById(login.paswordtxtID);
 			   login.submit = driver.LocateById(login.submitID);
 		  }catch(Exception e) {
-				Reporter.log("Can't find the submit Button");
+				System.out.println("Can't find the submit Button");
 				Assert.assertTrue(false);
 		  }
 		  act = builder.sendKeys(login.userNametxt,"King").build();
@@ -521,7 +518,7 @@ public class PostTest {
 		  try {
 		  CreatePost = driver.LocateByXpath("//*[@id='main']/button[1]");
 		  }catch(Exception e) {
-			  Reporter.log("Can't find creation button");
+			  System.out.println("Can't find creation button");
 			  Assert.assertTrue(false);
 		  }
 		  act = builder.moveToElement(CreatePost).click().build();
@@ -529,12 +526,12 @@ public class PostTest {
 		  Thread.sleep(3000);
 		  String Url = driver.driver.getCurrentUrl();
 		  Assert.assertEquals(Url, driver.Url+"/Submit");
-		  Reporter.log("Create Post with login Test passed");
+		  System.out.println("Create Post with login Test passed");
 		  Thread.sleep(5000);
 			try {
 				login.logout = driver.LocateById(login.logoutDivID);
 			}catch(Exception e) {
-				Reporter.log("Can't find loguot btn 5");
+				System.out.println("Can't find loguot btn 5");
 				Assert.assertTrue(false);
 			}
 		  	act = builder.moveToElement(login.logout).click().build();
@@ -543,7 +540,7 @@ public class PostTest {
 			try {
 				login.logoutButton = driver.LocateByXpath("//div[@id='loggedDiv']/ul/li[5]");
 			}catch(Exception e) {
-				Reporter.log("Can't find loguot btn 5");
+				System.out.println("Can't find loguot btn 5");
 				Assert.assertTrue(false);
 			}
 			act = builder.moveToElement(login.logoutButton).click().build();
@@ -552,7 +549,7 @@ public class PostTest {
 			try {
 				login.signBtn = driver.LocateById(login.signBtnID);
 			}catch(Exception e) {
-				Reporter.log("Can't  loguot");
+				System.out.println("Can't  loguot");
 				Assert.assertTrue(false);
 			}
 	}

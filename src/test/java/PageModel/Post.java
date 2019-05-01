@@ -20,6 +20,7 @@ public class Post {
 	public WebElement Comment;
 	public WebElement User;
 	public WebElement SubReddit;
+	public WebElement Message;
 	
 	public String FullPostId;
 	public String PostBodyId;

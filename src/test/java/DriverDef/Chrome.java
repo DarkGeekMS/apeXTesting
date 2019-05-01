@@ -21,17 +21,17 @@ public class Chrome {
 	public String Url;
 
 	public Chrome () {
+		
 		boolean isWindows = System.getProperty("os.name").toLowerCase().contains("win");
-		File driverpath =new File ("driver/chromedriver" + isWindows? ".exe":""); //add link of the driver
+		File driverpath =new File ("driver/chromedriver" + (isWindows == true? ".exe":"")); //add link of the driver
 		System.setProperty("webdriver.chrome.driver",driverpath.getAbsolutePath());//write value of this driver
-		this.driver=new ChromeDriver(); // here you connected the driver by option
+		driver = new ChromeDriver(); // here you connected the driver by option
 		wait = new WebDriverWait(driver, 20);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();   /// maximize screen
-
 		Url= System.getenv("SERVER_URL");
-		if(Url == NULL){
-			Url="http://35.232.3.8";
+		if(Url == null){
+			Url="http://localhost:8081";
 		}
 	}
 	

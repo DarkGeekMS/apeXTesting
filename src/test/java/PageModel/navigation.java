@@ -36,7 +36,7 @@ public class navigation {
 	public navigation()
 	{
 		HomeLink = System.getenv("SERVER_URL");
-		if(HomeLink == NULL)
+		if(HomeLink == null)
 		{
 			HomeLink = "http://35.232.3.8/";
 		}
