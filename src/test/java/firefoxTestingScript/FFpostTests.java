@@ -1,20 +1,18 @@
-package TestingScript;
+package firefoxTestingScript;
 
 import org.junit.Assert;
-
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
-import DriverDef.Chrome;
+import DriverDef.Firefox;
 import PageModel.LoginPage;
 import PageModel.Post;
 
-public class PostTest {
-	public Chrome driver;
+public class FFpostTests {
+	public Firefox driver;
 	public Post post;
 	public LoginPage login;
 	public Actions builder;
@@ -22,7 +20,7 @@ public class PostTest {
 	@BeforeClass
 	public void init()
 	{
-		driver = new Chrome();
+		driver = new Firefox();
 		post = new Post();
 		login = new LoginPage();
 		builder = new Actions(driver.driver);

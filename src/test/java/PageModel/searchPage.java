@@ -1,17 +1,39 @@
 package PageModel;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.WebElement;
 
 public class searchPage {
-	public WebDriver driver;
+	public WebElement searchTXT;
+    public WebElement postsBTN;
+    public WebElement UsersBTN;
+    public WebElement createcommunityBTN;
+    public WebElement errormsg1;
+    public WebElement errormsg2;
+    public WebElement post1;
+    public WebElement user1;
+    
+    public String errormsg2id;
+    public String user1id;
+    public String post1id;
+    public String errormsg1id;
+    public String searchTXTid;
+    public String postsBTNid;
+    public String UsersBTNid;
+    public String createcommunityBTNBTN;
 
-	public searchPage (WebDriver driver) 
+	public searchPage()
 	{
-		this.driver = driver; // connect driver of this page
-		PageFactory.initElements(driver, this); // hena ana ba3mel connect lel driver bel page 
-												// 3ashan a3araf 2ay element ba3melo call be driver web3den esm el page
-												// EX: driver.findElement(By.className("login"));
+		errormsg2id="";
+		searchTXTid ="";
+		postsBTNid="";
+		UsersBTNid="";
+		createcommunityBTNBTN="";
+		post1id="";
+		user1id="";
+		errormsg1id="subDiv";
+		
 	}
 
 }
+
+

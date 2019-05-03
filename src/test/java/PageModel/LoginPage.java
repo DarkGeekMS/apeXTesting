@@ -19,7 +19,8 @@ public class LoginPage {
 	public WebElement Errorlable;
 	public WebElement logout;
 	public WebElement logoutButton;
-
+	public WebElement settingBTN;
+	public WebElement profileBTN;
 	public String logoutDivID;
 	public String logoutButtonId;
 	public String signBtnID;

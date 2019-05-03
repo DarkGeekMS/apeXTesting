@@ -1,5 +1,4 @@
-package TestingScript;
-
+package firefoxTestingScript;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -9,14 +8,12 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
-import DriverDef.Chrome;
+import DriverDef.Firefox;
 import PageModel.LoginPage;
 import PageModel.SignUpPage;
 
-public class SignUpTest {
-  
-	public Chrome driver;
+public class FFsignupTests {
+	public Firefox driver;
 	public SignUpPage page;
 	public LoginPage login;
 	public Actions builder;
@@ -24,7 +21,7 @@ public class SignUpTest {
 	@BeforeClass
 	public void init()
 	{
-		driver = new Chrome();
+		driver = new Firefox();
 		page = new SignUpPage();
 		login = new LoginPage();
 		builder = new Actions(driver.driver);
@@ -557,5 +554,4 @@ public class SignUpTest {
 			Assert.assertTrue(false);
 		}
 	}
-	
 }

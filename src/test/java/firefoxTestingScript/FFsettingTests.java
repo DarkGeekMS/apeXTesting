@@ -1,31 +1,27 @@
-package TestingScript;
+package firefoxTestingScript;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotNull;
 import static org.testng.Assert.assertNull;
 import static org.testng.Assert.assertTrue;
-
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.By;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
-import DriverDef.Chrome;
+import DriverDef.Firefox;
 import PageModel.LoginPage;
 import PageModel.profileSettingPage;
-
 import java.awt.image.BufferedImage;
 import java.io.File;
-
 import javax.imageio.ImageIO;
 
-public class settingTests
+public class FFsettingTests
 {
-	public Chrome driver;
+	public Firefox driver;
 	public profileSettingPage settingPage;
 	public LoginPage login;
 	public Actions builder;
@@ -34,7 +30,7 @@ public class settingTests
 	@BeforeClass
 	public void BeforeClass() throws Throwable
 		{
-		    driver = new Chrome();
+		    driver = new Firefox();
 			settingPage = new profileSettingPage();
 			login = new LoginPage();
 			builder = new Actions(driver.driver);
@@ -44,8 +40,32 @@ public class settingTests
 			////////////////////////////////////////////
 			driver.nav(driver.Url);
 		  	Thread.sleep(5000);
+		  	try {
+		  		login.signBtn = driver.LocateById(login.signBtnID);
+			}catch(Exception e) {
+				Reporter.log("Can't find the signIn Button ");
+				Assert.assertTrue(false);
+			}
+		  	act = builder.moveToElement(login.signBtn).click().build();
+		  	act.perform(); 
+		  	Thread.sleep(3000);
+		  	try {
+			   login.userNametxt = driver.LocateById(login.userNametxtID);
+			   login.paswordtxt = driver.LocateById(login.paswordtxtID);
+			   login.submit = driver.LocateById(login.submitID);
+			}catch(Exception e) {
+				Reporter.log("Can't find the submit Button ");
+				Assert.assertTrue(false);
+			}
 		  	
-		  	signin("eslam","123456");
+		  	act = builder.sendKeys(login.userNametxt,"mondaTalaat").build();
+		  	act.perform();
+		  	act = builder.sendKeys(login.paswordtxt,"monda21").build();
+		  	act.perform();
+		  	act = builder.moveToElement(login.submit).click().build();
+		  	act.perform();
+		  	Thread.sleep(5000);											//log in done
+		  	
 		  	try {
 		  		login.UserInfo = driver.LocateById(login.logoutDivID);
 			}catch(Exception e) {
@@ -54,11 +74,8 @@ public class settingTests
 			}
 		  	act = builder.moveToElement(login.UserInfo).click().build();
 		  	act.perform();
-			Thread.sleep(1000);
-
 			try {
 				login.settingBTN = driver.LocateByXpath("//a[@class='router-link-exact-active router-link-active']");
-			System.out.print("fount");
 			}catch(Exception e) {
 				Reporter.log("Can't find setting btn");
 				Assert.assertTrue(false);
@@ -66,7 +83,6 @@ public class settingTests
 			act = builder.moveToElement(login.settingBTN).click().build();
 			act.perform();
 			Thread.sleep(1000);
-		  	
 			
 		}
 	@AfterClass
@@ -75,7 +91,30 @@ public class settingTests
 			Reporter.log("setting test ends");
 			driver.shutdown();
 		}
-
+	
+/*	@BeforeTest
+	public void BeforeTest()
+		{
+			try {
+		  		login.UserInfo = driver.LocateById(login.logoutDivID);
+			}catch(Exception e) {
+				Reporter.log("Can't login");
+				Assert.assertTrue(false);
+			}
+		  	act = builder.moveToElement(login.UserInfo).click().build();
+		  	act.perform();
+			try {
+				login.settingBTN = driver.LocateByXpath("//a[@class='router-link-exact-active router-link-active']");
+			}catch(Exception e) {
+				Reporter.log("Can't find setting btn");
+				Assert.assertTrue(false);
+			}
+			act = builder.moveToElement(login.settingBTN).click().build();
+			act.perform();
+			Thread.sleep(1000);
+		}*/	
+	
+	
 	@Test(priority=1,description="cancel change pass test")
 	public void cancelChangePass() throws Throwable 
 {
@@ -98,11 +137,11 @@ public class settingTests
 			Reporter.log("Can't find the cancel Button ");
 			Assert.assertTrue(false);
 		}
-	  	act = builder.sendKeys(settingPage.usernameTXT,"eslam").build();
+	  	act = builder.sendKeys(settingPage.usernameTXT,"monda22").build();
 		act.perform();
-		act = builder.sendKeys(settingPage.oldpasstxt,"123456").build();
+		act = builder.sendKeys(settingPage.oldpasstxt,"monda21").build();
 		act.perform();
-		act = builder.sendKeys(settingPage.newpasstxt,"123459").build();
+		act = builder.sendKeys(settingPage.newpasstxt,"monda22").build();
 		act.perform();
 		
 		act = builder.moveToElement(settingPage.cancelpassBtn).click().build();
@@ -136,11 +175,11 @@ public class settingTests
 				Reporter.log("Can't find the save Button ");
 				Assert.assertTrue(false);
 			}
-		  	act = builder.sendKeys(settingPage.usernameTXT,"eslaam").build();
+		  	act = builder.sendKeys(settingPage.usernameTXT,"sqqwswq").build();
 			act.perform();
-			act = builder.sendKeys(settingPage.oldpasstxt,"123456").build();
+			act = builder.sendKeys(settingPage.oldpasstxt,"monda21").build();
 			act.perform();
-			act = builder.sendKeys(settingPage.newpasstxt,"123459").build();
+			act = builder.sendKeys(settingPage.newpasstxt,"cwdwe").build();
 			act.perform();
 			
 			act = builder.moveToElement(settingPage.savepassBTN).click().build();
@@ -171,11 +210,11 @@ public class settingTests
 				Reporter.log("Can't find the submit Button 7");
 				Assert.assertTrue(false);
 			}
-		  	act = builder.sendKeys(settingPage.oldpasstxt,"eslam").build();
+		  	act = builder.sendKeys(settingPage.oldpasstxt,"monda21").build();
 			act.perform();
-			act = builder.sendKeys(settingPage.newpasstxt,"123456").build();
+			act = builder.sendKeys(settingPage.newpasstxt,"monda22").build();
 			act.perform();
-			act = builder.sendKeys(settingPage.usernameTXT,"12359").build();
+			act = builder.sendKeys(settingPage.usernameTXT,"monda22").build();
 			act.perform();
 			act = builder.moveToElement(settingPage.savepassBTN).click().build();
 			act.perform();
@@ -218,9 +257,9 @@ public class settingTests
 				Assert.assertTrue(false);
 			}
 		  	
-		  	act = builder.sendKeys(login.userNametxt,"eslam").build();
+		  	act = builder.sendKeys(login.userNametxt,"mondaTalaat").build();
 		  	act.perform();
-		  	act = builder.sendKeys(login.paswordtxt,"123459").build();
+		  	act = builder.sendKeys(login.paswordtxt,"monda22").build();
 		  	act.perform();
 		  	act = builder.moveToElement(login.submit).click().build();
 		  	act.perform();															// log in with new pass
@@ -232,34 +271,31 @@ public class settingTests
 				Reporter.log("Can't login");
 				Assert.assertTrue(false);
 			}
-		  	String actual =" eslam ";
+		  	String actual ="mondaTalaat";
 			
 		  	String expected =driver.driver.findElement(By.id(login.logoutDivID)).getText();
 			assertEquals(actual, expected);
 	  }
 	
-
-	
-	@Test(priority=4,description="change profile picture test")
-	public void changePic() throws Throwable
+	@Test(priority=4,description="Allow notification Test test")
+	public void allowNotifications() throws Throwable
 	{
 		try {
-	  		login.UserInfo = driver.LocateById(login.logoutDivID);
-		}catch(Exception e) {
-			Reporter.log("Can't login");
-			Assert.assertTrue(false);
-		}
-	  	act = builder.moveToElement(login.UserInfo).click().build();
-	  	act.perform();
-		try {
-			login.settingBTN = driver.LocateByXpath("//a[@class='router-link-exact-active router-link-active']");
-		}catch(Exception e) {
-			Reporter.log("Can't find setting btn");
-			Assert.assertTrue(false);
-		}
-		act = builder.moveToElement(login.settingBTN).click().build();
-		act.perform();
-		Thread.sleep(1000);											// open setting page
+			  settingPage.notificationRadiobutton = driver.LocateByXpath(settingPage.notificationRadiobuttonxpath);
+			}catch(Exception e) {
+				Reporter.log("Can't find the radio Button ");
+				Assert.assertTrue(false);
+			}
+		  	act = builder.moveToElement(settingPage.notificationRadiobutton).click().build();
+		  	act.perform();    																	// radio button is clicked
+	// not completed don't know what should happened
+		  	
+		  																						//check that notification is allowed
+	}
+	
+	@Test(priority=5,description="change profile picture test")
+	public void changePic() throws Throwable
+	{
 		try {
 			  settingPage.Psimage = driver.LocateById(settingPage.Psimageid);
 			}catch(Exception e) {
@@ -314,27 +350,10 @@ public class settingTests
 	}
 	
 	
-	@Test(priority=6,description="deactivate profile test")
+	@Test(priority=7,description="deactivate profile test")
 	public void deactivate() throws Throwable
 	{
-		try {
-	  		login.UserInfo = driver.LocateById(login.logoutDivID);
-		}catch(Exception e) {
-			Reporter.log("Can't login");
-			Assert.assertTrue(false);
-		}
-	  	act = builder.moveToElement(login.UserInfo).click().build();
-	  	act.perform();
-		try {
-			login.settingBTN = driver.LocateByXpath("//a[@class='router-link-exact-active router-link-active']");
-		}catch(Exception e) {
-			Reporter.log("Can't find setting btn");
-			Assert.assertTrue(false);
-		}
-		act = builder.moveToElement(login.settingBTN).click().build();
-		act.perform();
-		Thread.sleep(1000);
-															// open setting page
+
 		 try {
 			  settingPage.deactivateaccountBTN = driver.LocateById(settingPage.deactivateaccountBTNid);
 			}catch(Exception e) {
@@ -350,7 +369,7 @@ public class settingTests
 					Reporter.log("Can't find the change pasword Button ");
 					Assert.assertTrue(false);
 				}
-			  	act = builder.sendKeys(settingPage.passtodeactivateTXT,"123459").build();
+			  	act = builder.sendKeys(settingPage.passtodeactivateTXT,"123456").build();
 			  	act.perform(); 															// enter password
 		  	
 		  	try {
@@ -372,7 +391,7 @@ public class settingTests
 			  	
 	}
 
-	@Test(priority=5,description="deactivate profile test and cancel")
+	@Test(priority=8,description="deactivate profile test and cancel")
 	public void canceldeactivate() throws Throwable
 	{
 
@@ -408,60 +427,4 @@ public class settingTests
 			  	
 	}
 
-	void signin(String name,String pass) throws InterruptedException {
-		try {
-	  		login.signBtn = driver.LocateById(login.signBtnID);
-		}catch(Exception e) {
-			logout();
-		}
-		try {
-	  		login.signBtn = driver.LocateById(login.signBtnID);
-		}catch(Exception e) {
-			System.out.println("Can't find the signIn Button");
-			Assert.assertTrue(false);
-		}
-	  	act = builder.moveToElement(login.signBtn).click().build();
-	  	act.perform(); 
-	  	Thread.sleep(5000);
-	  	try {
-		   login.userNametxt = driver.LocateById(login.userNametxtID);
-		   login.paswordtxt = driver.LocateById(login.paswordtxtID);
-		   login.submit = driver.LocateByXpath("//*[@id='partition-register']/div[2]/form/button");
-		}catch(Exception e) {
-			System.out.println("Can't find the submit Button ");
-			Assert.assertTrue(false);
-		}
-	  	act = builder.sendKeys(login.userNametxt,Keys.chord(Keys.CONTROL, "a"), Keys.BACK_SPACE).build();
-	  	act.perform();
-	  	act = builder.sendKeys(login.paswordtxt,Keys.chord(Keys.CONTROL, "a"), Keys.BACK_SPACE).build();
-	  	act.perform();
-	  	Thread.sleep(5000);
-	  	act = builder.sendKeys(login.userNametxt,name).build();
-	  	act.perform();
-	  	act = builder.sendKeys(login.paswordtxt,pass).build();
-	  	act.perform();
-	  	act = builder.moveToElement(login.submit).click().build();
-	  	act.perform();
-	  	Thread.sleep(5000);
-	}
-	void logout() throws InterruptedException {
-		try {
-			login.logout = driver.LocateById(login.logoutDivID);
-		}catch(Exception e) {
-			System.out.println("Can't find logout btn 5");
-			Assert.assertTrue(false);
-		}
-	  	act = builder.moveToElement(login.logout).click().build();
-		act.perform();
-		Thread.sleep(5000);
-		try {
-			login.logoutButton = driver.LocateByXpath("//*[@id='loggedbutton']//following-sibling::ul/li[5]");
-		}catch(Exception e) {
-			System.out.println("Can't find logout btn 5");
-			Assert.assertTrue(false);
-		}
-		act = builder.moveToElement(login.logoutButton).click().build();
-		act.perform();
-		Thread.sleep(5000);
-	}
 }
