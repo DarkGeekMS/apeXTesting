@@ -39,7 +39,7 @@ public class FFprofileTests {
 		try {
 	  		login.signBtn = driver.LocateById(login.signBtnID);
 		}catch(Exception e) {
-			System.out.println("Can't find the signIn Button");
+			Reporter.log("Can't find the signIn Button");
 			Assert.assertTrue(false);
 		}
 	  	act = builder.moveToElement(login.signBtn).click().build();
@@ -50,7 +50,7 @@ public class FFprofileTests {
 		   login.paswordtxt = driver.LocateById(login.paswordtxtID);
 		   login.submit = driver.LocateByXpath("//*[@id='partition-register']/div[2]/form/button");
 		}catch(Exception e) {
-			System.out.println("Can't find the submit Button ");
+			Reporter.log("Can't find the submit Button ");
 			Assert.assertTrue(false);
 		}
 	  	act = builder.sendKeys(login.userNametxt,Keys.chord(Keys.CONTROL, "a"), Keys.BACK_SPACE).build();
@@ -70,7 +70,7 @@ public class FFprofileTests {
 		try {
 			login.logout = driver.LocateById(login.logoutDivID);
 		}catch(Exception e) {
-			System.out.println("Can't find logout btn 5");
+			Reporter.log("Can't find logout btn 5");
 			Assert.assertTrue(false);
 		}
 	  	act = builder.moveToElement(login.logout).click().build();
@@ -79,7 +79,7 @@ public class FFprofileTests {
 		try {
 			login.logoutButton = driver.LocateByXpath("//*[@id='loggedbutton']//following-sibling::ul/li[5]");
 		}catch(Exception e) {
-			System.out.println("Can't find logout btn 5");
+			Reporter.log("Can't find logout btn 5");
 			Assert.assertTrue(false);
 		}
 		act = builder.moveToElement(login.logoutButton).click().build();
@@ -95,7 +95,7 @@ public class FFprofileTests {
 		ProfPage = new profilePage();
 		login = new LoginPage();
 		builder = new Actions(driver.driver);
-		System.out.println("profile test starts");
+		Reporter.log("profile test starts");
 		////////////////////////////////////////////
 		//LOG IN and open setting page/////
 		////////////////////////////////////////////
@@ -129,7 +129,7 @@ public class FFprofileTests {
 public void finalize()
 	{
 		driver.shutdown();
-		System.out.println("profile test ends");
+		Reporter.log("profile test ends");
 	}
 
 
@@ -188,10 +188,9 @@ public void test2() throws Throwable
 		boolean getUser=false;
 		List<WebElement>  BlockedUsersList = driver.driver.findElements(By.xpath("//*[@id='box']//p"));
 	    int x =BlockedUsersList.size();
-	    System.out.println(BlockedUsersList.size());
 	    for(int i=0;i<x;i++)
 	    {
-	    	System.out.println(BlockedUsersList.get(i).getText());
+	    	Reporter.log(BlockedUsersList.get(i).getText());
 	    	if (BlockedUsersList.get(i).getText().equals("sayed"))
 	    	{
 	    		getUser=true;
@@ -325,10 +324,9 @@ public void test5() throws Throwable
 		boolean getUser=false;
 		List<WebElement>  BlockedUsersList = driver.driver.findElements(By.xpath("//*[@id='box']//p"));
 	    int x =BlockedUsersList.size();
-	    System.out.println(BlockedUsersList.size());
 	    for(int i=0;i<x;i++)
 	    {
-	    	System.out.println(BlockedUsersList.get(i).getText());
+	    	Reporter.log(BlockedUsersList.get(i).getText());
 	    	if (BlockedUsersList.get(i).getText().equals("sayed"))
 	    	{
 	    		getUser=true;

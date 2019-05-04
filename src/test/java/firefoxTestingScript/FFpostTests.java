@@ -914,23 +914,17 @@ public class FFpostTests {
 		int x = list.size();
 		String start = "//*[@id='CommentParent']/div["+Integer.toString(x+1)+"]//div[@id='Comment']";
 		String contentXpath = start+"//div[@id='secondLine']//p",
-				upvoteXpath = start+"//button[@id='Up']",
-				downvoteXpath = start+"//button[@id='Down']",
 				ReplyXpath = start+"//div[@id='thirdLine']/button[1]",
 				saveXpath =  start+"//div[@id='thirdLine']/button[3]",
 				EditXpath =  start+"//div[@id='thirdLine']/button[4]",
-				deleteXpath =  start+"//div[@id='thirdLine']/button[5]",
-				voteXpath = start+"//div[@id='firstLine']/b[1]";
-		WebElement upvote=null,downvote=null,reply=null,save=null,edit=null,delete=null,content=null,votes=null;
+				deleteXpath =  start+"//div[@id='thirdLine']/button[5]";
+		WebElement reply=null,save=null,edit=null,delete=null,content=null;
 		try {
-			upvote=driver.LocateByXpath(upvoteXpath);
-			downvote=driver.LocateByXpath(downvoteXpath);
 			reply=driver.LocateByXpath(ReplyXpath);
 			save=driver.LocateByXpath(saveXpath);
 			edit=driver.LocateByXpath(EditXpath);
 			delete=driver.LocateByXpath(deleteXpath);
 			content=driver.LocateByXpath(contentXpath);
-			votes=driver.LocateByXpath(voteXpath);
 		}catch(Exception e) {
 			System.out.println("Missing elements");
 			Assert.assertTrue(false);

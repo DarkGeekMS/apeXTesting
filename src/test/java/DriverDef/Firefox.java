@@ -18,12 +18,15 @@ public class Firefox {
 	public Firefox () 
 	{
 		boolean isWindows = System.getProperty("os.name").toLowerCase().contains("win");
-		File driverpath =new File ("driver/geckodriver.exe"); //add link of the driver
+		File driverpath =new File ("driver/geckodriver" + (isWindows == true? ".exe":"")); //add link of the driver
 		System.setProperty("webdriver.gecko.driver",driverpath.getAbsolutePath());//write value of this driver
 		driver=new FirefoxDriver(); // here you connected the driver by option	
 		wait = new WebDriverWait(driver, 20);
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		Url="http://35.232.3.8";
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		Url= System.getenv("SERVER_URL");
+		if(Url == null){
+			Url="http://35.232.3.8/";
+		}
 	}
 	public WebElement LocateById(String Id) throws InterruptedException
 	{
