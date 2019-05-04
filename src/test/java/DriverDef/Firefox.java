@@ -12,14 +12,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Firefox {
 	public WebDriver driver;
-	File driverpath =new File ("driver/geckodriver.exe"); //add link of the driver
 	WebDriverWait wait;
 	public String Url;
 
 	public Firefox () 
 	{
-		System.setProperty("webdriver.Firefox.driver",driverpath.getAbsolutePath());//write value of this driver
-		this.driver=new FirefoxDriver(); // here you connected the driver by option	
+		boolean isWindows = System.getProperty("os.name").toLowerCase().contains("win");
+		File driverpath =new File ("driver/geckodriver.exe"); //add link of the driver
+		System.setProperty("webdriver.gecko.driver",driverpath.getAbsolutePath());//write value of this driver
+		driver=new FirefoxDriver(); // here you connected the driver by option	
 		wait = new WebDriverWait(driver, 20);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		Url="http://35.232.3.8";

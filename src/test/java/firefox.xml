@@ -7,7 +7,7 @@
     </classes>
   </test> <!-- Test -->
   
-  <test name="Test">
+  <test name="Test1">
     <classes>
       <class name="firefoxTestingScript.FFloginTest"/>
     </classes>
