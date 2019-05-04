@@ -2,7 +2,6 @@ package TestingScript;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
-
 import org.testng.annotations.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -12,10 +11,8 @@ import org.testng.AssertJUnit;
 import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-
 import DriverDef.Chrome;
 import PageModel.searchPage;
-
 
 public class searchTests {
 	public Chrome driver;
@@ -31,6 +28,7 @@ public class searchTests {
 		builder = new Actions(driver.driver);
 		Reporter.log("search test starts");
 	}
+	
 	@AfterClass
 	public void finalize()
 	{

@@ -1,5 +1,6 @@
 package firefoxTestingScript;
 
+
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNull;
 

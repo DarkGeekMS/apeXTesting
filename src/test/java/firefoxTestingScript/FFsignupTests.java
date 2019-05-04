@@ -1,5 +1,6 @@
 package firefoxTestingScript;
 
+
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
@@ -13,6 +14,7 @@ import PageModel.LoginPage;
 import PageModel.SignUpPage;
 
 public class FFsignupTests {
+	
 	public Firefox driver;
 	public SignUpPage page;
 	public LoginPage login;

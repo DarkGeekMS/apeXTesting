@@ -22,8 +22,8 @@ import PageModel.profilePage;
 import PageModel.searchPage;
 
 public class FFprofileTests {
+	
 	public Firefox driver;
-
 	public searchPage st;
 	public profilePage ProfPage;
 	public LoginPage login;

@@ -3,6 +3,7 @@ package PageModel;
 import org.openqa.selenium.WebElement;
 
 public class SignUpPage {
+	
 	public WebElement SignUpButton;
 	public WebElement Email;
 	public WebElement Next;

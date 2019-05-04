@@ -1,10 +1,7 @@
 package TestingScript;
 
 import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertNotEquals;
 import static org.testng.Assert.assertNotNull;
-import static org.testng.Assert.assertTrue;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
@@ -21,14 +18,12 @@ import PageModel.apexcomPage;
 import PageModel.searchPage;
 
 public class apexcomTest {
-  
-  public Chrome driver;
+   public Chrome driver;
 	public apexcomPage ApexcomPage;
 	public Actions builder;
 	public searchPage SearchPage;
 	public org.openqa.selenium.interactions.Action act;
 	public LoginPage login;
-
 
 	@BeforeClass
   public void BeforeClass()

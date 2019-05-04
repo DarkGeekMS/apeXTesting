@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 
 public class profileSettingPage 
 {
-	
     public WebElement changepassbutton;
     public WebElement oldpasstxt;
     public WebElement newpasstxt;  

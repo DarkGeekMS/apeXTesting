@@ -1,6 +1,5 @@
 package TestingScript;
 
-
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
@@ -15,12 +14,12 @@ import PageModel.LoginPage;
 import PageModel.SignUpPage;
 
 public class SignUpTest {
-  
 	public Chrome driver;
 	public SignUpPage page;
 	public LoginPage login;
 	public Actions builder;
 	public Action act;
+	
 	@BeforeClass
 	public void init()
 	{
@@ -36,6 +35,7 @@ public class SignUpTest {
 		driver.shutdown();
 		System.out.println("Sign up test ends");
 	}
+	
 	
 	@Test(description="Entering inValid Email then press Next or Empty Email",priority=0)
 	public void test1() throws InterruptedException

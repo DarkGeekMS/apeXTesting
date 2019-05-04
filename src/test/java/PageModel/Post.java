@@ -3,6 +3,7 @@ package PageModel;
 import org.openqa.selenium.WebElement;
 
 public class Post {
+	
 	public WebElement FullPost;
 	public WebElement PostBody;
 	public WebElement PostFooter;

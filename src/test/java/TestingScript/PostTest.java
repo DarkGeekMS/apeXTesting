@@ -14,6 +14,7 @@ import PageModel.LoginPage;
 import PageModel.Post;
 
 public class PostTest {
+	
 	public Chrome driver;
 	public Post post;
 	public LoginPage login;

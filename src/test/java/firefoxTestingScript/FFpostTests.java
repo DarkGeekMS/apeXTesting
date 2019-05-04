@@ -12,6 +12,7 @@ import PageModel.LoginPage;
 import PageModel.Post;
 
 public class FFpostTests {
+	
 	public Firefox driver;
 	public Post post;
 	public LoginPage login;

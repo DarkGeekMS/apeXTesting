@@ -1,13 +1,11 @@
 
-
-
 package PageModel;
 
 import org.openqa.selenium.WebElement;
 
 
 public class LoginPage {
-	//public WebDriver driver;
+
 	public WebElement nextBTN;
 	public WebElement close;
 	public WebElement signupBTN;

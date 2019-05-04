@@ -3,6 +3,7 @@ package PageModel;
 import org.openqa.selenium.WebElement;
 
 public class apexcomPage {
+	
 	public WebElement apexcom;
     public WebElement apexcompost;
     public WebElement posttitle;

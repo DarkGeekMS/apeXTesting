@@ -3,6 +3,7 @@ package PageModel;
 import org.openqa.selenium.WebElement;
 
 public class searchPage {
+
 	public WebElement searchTXT;
     public WebElement postsBTN;
     public WebElement UsersBTN;

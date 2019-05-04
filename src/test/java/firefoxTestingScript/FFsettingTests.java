@@ -25,6 +25,7 @@ import javax.imageio.ImageIO;
 
 public class FFsettingTests
 {
+	
 	public Firefox driver;
 	public profileSettingPage settingPage;
 	public LoginPage login;

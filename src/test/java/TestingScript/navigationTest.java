@@ -12,13 +12,12 @@ import org.testng.annotations.Test;
 import DriverDef.Chrome;
 import PageModel.navigation;
 
-public class navigationTest {
-	
+
+public class navigationTest {	
 	public Chrome chromeDriver;
 	public navigation Navigations;
 	public Actions builder;
 	public org.openqa.selenium.interactions.Action act;
-
 
 	@BeforeClass
 	public void BeforeClass()
@@ -28,6 +27,7 @@ public class navigationTest {
 		builder = new Actions(chromeDriver.driver);
 		Reporter.log("Navigation test starts");
 	}
+	
 	@AfterClass
 	public void finalize()
 	{

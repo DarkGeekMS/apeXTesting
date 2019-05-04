@@ -2,7 +2,6 @@ package TestingScript;
 
 import static org.testng.Assert.assertNotNull;
 import static org.testng.Assert.assertTrue;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -13,9 +12,7 @@ import org.testng.AssertJUnit;
 import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
 import DriverDef.Chrome;
 import PageModel.LoginPage;
 import PageModel.profilePage;
@@ -67,6 +64,7 @@ public class profileTest{
 	  	act.perform();
 	  	Thread.sleep(5000);
 	}
+	
 	void logout() throws InterruptedException {
 		try {
 			login.logout = driver.LocateById(login.logoutDivID);

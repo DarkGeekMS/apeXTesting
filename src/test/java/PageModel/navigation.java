@@ -3,11 +3,11 @@ package PageModel;
 import org.openqa.selenium.WebElement;
 
 public class navigation {
+
 	public String HomeLink;
 	public String apexcomLink;
 	public String UserProfileLink;
-	public String creatpostlink;
-	
+	public String creatpostlink;	
 	public WebElement signBtn;
 	public WebElement SignUpButton;
 	public WebElement postText;

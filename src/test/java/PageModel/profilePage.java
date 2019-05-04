@@ -11,8 +11,7 @@ public class profilePage
    public WebElement confirmblockBTN;
    public WebElement UnblockBTN;
    public WebElement homeBTN;
-public WebElement user;
-   
+   public WebElement user;
    public String userid;
    public String UsernameLogoid;
    public String blockBTNid;
@@ -20,7 +19,6 @@ public WebElement user;
    public String createpostdivid;
    public String confirmblockBTNclass;
    public String UnblockBTNid;
-
    public String homeBTNid;
     public String sortbyXPATH;
     public String createPostdivid;

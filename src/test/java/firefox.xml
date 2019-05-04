@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="Suite" parallel="false">
+
   <test name="Test">
     <classes>
       <class name="firefoxTestingScript.FFapexcom"/>
@@ -41,12 +42,11 @@
       <class name="firefoxTestingScript.FFsettingTests"/>
     </classes>
   </test> <!-- Test -->
+
   <test name="Test7">
     <classes>
       <class name="firefoxTestingScript.FFsignupTests"/>
     </classes>
   </test> <!-- Test -->
-  
-  
-  
+    
 </suite> <!-- Suite -->

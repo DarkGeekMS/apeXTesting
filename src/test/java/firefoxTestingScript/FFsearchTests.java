@@ -17,6 +17,7 @@ import DriverDef.Firefox;
 import PageModel.searchPage;
 
 public class FFsearchTests {
+
 	public Firefox driver;
 	public Actions builder;
 	public org.openqa.selenium.interactions.Action act;

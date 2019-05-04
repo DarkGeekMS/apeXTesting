@@ -25,6 +25,7 @@ import javax.imageio.ImageIO;
 
 public class settingTests
 {
+	
 	public Chrome driver;
 	public profileSettingPage settingPage;
 	public LoginPage login;
@@ -105,7 +106,6 @@ public class settingTests
 	  	
 	  	
 }
-
 
 	@Test(priority=2,description="inter wrong  username when you change pass")
 	public void wrongusername() throws Throwable

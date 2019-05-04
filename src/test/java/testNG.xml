@@ -1,25 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="Suite" parallel="false">
+
 <test name="Test5">
     <classes>
       <class name="TestingScript.profileTest"/>
     </classes>
   </test> <!-- Test -->
+
   <test name="Test7">
     <classes>
       <class name="TestingScript.searchTests"/>
     </classes>
   </test> <!-- Test -->
+
   <test name="Test8">
     <classes>
       <class name="TestingScript.settingTests"/>
     </classes>
   </test> <!-- Test -->
+
   <test name="Test9">
     <classes>
       <class name="TestingScript.SignUpTest"/>
     </classes>
   </test> <!-- Test -->
+
   <test name="Test6">
     <classes>
       <class name="TestingScript.apexcomTest"/>

@@ -13,6 +13,8 @@ import DriverDef.Firefox;
 import PageModel.navigation;
 
 public class FFnavigationTests {
+	
+	
 	public Firefox FFD;
 	public navigation Navigations;
 	public Actions builder;
