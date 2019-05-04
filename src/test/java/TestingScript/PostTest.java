@@ -98,7 +98,7 @@ public class PostTest {
 		driver.shutdown();
 		System.out.println("Post test ends");
 	}
-	/*
+	
 	//without login tests
 	@Test(priority=0,description="Press on every part of a post and check if it opens it or not(works for logged person or not)")
 	public void test1() throws InterruptedException {
@@ -357,8 +357,8 @@ public class PostTest {
 		}
 		System.out.println("Reporting without login Passed");
 	}
-	@Test(priority=5,description="Try To Vote Without Logging In")
-	public void test6() throws Throwable{
+	@Test(priority=6,description="Try To Vote Without Logging In")
+	public void test7() throws Throwable{
 		driver.nav(driver.Url);
 		Thread.sleep(3000);
 		try {
@@ -396,8 +396,8 @@ public class PostTest {
 		System.out.println("Voting without login Passed");
 	}
 	// after login
-	@Test(priority=5,description="Try To Vote with Logging In")
-	public void test6() throws Throwable{
+	@Test(priority=7,description="Try To Vote with Logging In")
+	public void test8() throws Throwable{
 		driver.nav(driver.Url);
 		Thread.sleep(3000);
 		signin("hell12","hell12");
@@ -524,8 +524,8 @@ public class PostTest {
 		System.out.println("Voting without login Passed");
 	}
 	
-	@Test(priority=6,description="Try To report another person's post with Logging In")
-	public void test7() throws Throwable{
+	@Test(priority=8,description="Try To report another person's post with Logging In")
+	public void test9() throws Throwable{
 		driver.nav(driver.Url);
 		Thread.sleep(3000);
 		String user="",apex="",time="",content="",votes="",title="";
@@ -609,8 +609,8 @@ public class PostTest {
 		System.out.println("Reporting without login Passed");
 	}
 	
-	@Test(priority=7,description="Try To Hide a post with Logging In (if the test is passed then it's a hide if it failed then it's an unhide")
-	public void test8() throws Throwable{
+	@Test(priority=9,description="Try To Hide a post with Logging In (if the test is passed then it's a hide if it failed then it's an unhide")
+	public void test10() throws Throwable{
 		driver.nav(driver.Url);
 		Thread.sleep(3000);
 		String user="",apex="",time="",content="",votes="",title="";
@@ -720,8 +720,8 @@ public class PostTest {
 		Assert.assertEquals(content,content2);
 		System.out.println("Hiding post with login Passed");
 	}
-	@Test(priority=8,description="Try To save a post with Logging In (if the test is passed then it's a save if it failed then it's an unsave")
-	public void test9() throws Throwable{
+	@Test(priority=10,description="Try To save a post with Logging In (if the test is passed then it's a save if it failed then it's an unsave")
+	public void test11() throws Throwable{
 		driver.nav(driver.Url);
 		Thread.sleep(3000);
 		String user="",apex="",time="",content="",votes="",title="",status="";
@@ -882,8 +882,8 @@ public class PostTest {
 		System.out.println("Saving post with login Passed");
 	}
 	
-	@Test(priority=4,description="(full test)non empty Comment After Logging In as empty comment has no response") //empty comment has no response
-	public void test5() throws Throwable{
+	@Test(priority=11,description="(full test)non empty Comment After Logging In as empty comment has no response") //empty comment has no response
+	public void test12() throws Throwable{
 		driver.nav(driver.Url);
 		Thread.sleep(3000);
 		String msg="E2E testing";
@@ -1000,8 +1000,8 @@ public class PostTest {
 		Assert.assertTrue(false);
 	}
 	
-	@Test(priority=10,description="Create post's Button with Login")
-	public void test11()throws Throwable{
+	@Test(priority=12,description="Create post's Button with Login")
+	public void test13()throws Throwable{
 		driver.nav(driver.Url);
 		Thread.sleep(3000);
 		signin("hell12","hell12");
@@ -1068,9 +1068,9 @@ public class PostTest {
 		  Assert.assertEquals("Submitted Successfully!", tmp);
 		  System.out.println("Created post successfully");
 	}
-	*/
-	@Test(priority=11,description="Edit post")
-	public void test12()throws Throwable{
+	
+	@Test(priority=13,description="Edit post")
+	public void test14()throws Throwable{
 		driver.nav(driver.Url);
 		Thread.sleep(3000);
 		signin("hell12","hell12");
@@ -1148,8 +1148,8 @@ public class PostTest {
 			}
 		  System.out.println("Created post successfully");
 	}
-	@Test(priority=12,description="lock post")
-	public void test13()throws Throwable{
+	@Test(priority=14,description="lock post")
+	public void test15()throws Throwable{
 		driver.nav(driver.Url);
 		Thread.sleep(3000);
 		signin("hell12","hell12");
@@ -1206,8 +1206,8 @@ public class PostTest {
 		  Assert.assertEquals("Successfully :)", tmp);
 		  System.out.println("locked post successfully");
 	}
-	@Test(priority=13,description="delete post")
-	public void test14()throws Throwable{
+	@Test(priority=15,description="delete post")
+	public void test16()throws Throwable{
 		driver.nav(driver.Url);
 		Thread.sleep(3000);
 		signin("hell12","hell12");

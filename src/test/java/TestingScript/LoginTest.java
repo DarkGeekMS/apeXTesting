@@ -141,7 +141,7 @@ public class LoginTest
 			Reporter.log("Can't find the submit Button 3");
 			Assert.assertTrue(false);
 		}
-	  	act = builder.sendKeys(login.userNametxt,"King").build();
+	  	act = builder.sendKeys(login.userNametxt,"hell12").build();
 	  	act.perform();
 	  	act = builder.sendKeys(login.paswordtxt,"1212145").build();
 	  	act.perform();
@@ -229,9 +229,9 @@ public class LoginTest
 			Reporter.log("Can't find the submit Button 7");
 			Assert.assertTrue(false);
 		}
-	  	act = builder.sendKeys(login.userNametxt,"King").build();
+	  	act = builder.sendKeys(login.userNametxt,"hell12").build();
 		act.perform();
-		act = builder.sendKeys(login.paswordtxt,"queen12").build();
+		act = builder.sendKeys(login.paswordtxt,"hell12").build();
 		act.perform();
 		act = builder.moveToElement(login.submit).click().build();
 		act.perform();
@@ -283,9 +283,9 @@ public class LoginTest
 			Reporter.log("Can't find the submit Button 4");
 			Assert.assertTrue(false);
 		}
-	  	act = builder.sendKeys(login.userNametxt,"King").build();
+	  	act = builder.sendKeys(login.userNametxt,"hell12").build();
 	  	act.perform();
-	  	act = builder.sendKeys(login.paswordtxt,"queen12").build();
+	  	act = builder.sendKeys(login.paswordtxt,"hell12").build();
 	  	act.perform();
 	  	act = builder.moveToElement(login.submit).click().build();
 	  	act.perform();
