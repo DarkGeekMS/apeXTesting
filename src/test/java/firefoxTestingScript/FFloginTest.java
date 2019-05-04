@@ -28,12 +28,12 @@ public class FFloginTest {
 		driver = new Firefox();
 		login = new LoginPage();
 		builder = new Actions(driver.driver);
-		Reporter.log("Sign up test starts");
+		Reporter.log("Sign in test starts");
 	}
 	@AfterClass
 	public void finalize()
 	{
-		Reporter.log("Sign up test ends");
+		Reporter.log("Sign in test ends");
 		driver.shutdown();
 	}
 
