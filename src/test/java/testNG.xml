@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="Suite" parallel="false">
+<test name="Test5">
+    <classes>
+      <class name="TestingScript.profileTest"/>
+    </classes>
+  </test> <!-- Test -->
   <test name="Test2">
     <classes>
       <class name="TestingScript.PostTest"/>

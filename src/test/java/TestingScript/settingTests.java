@@ -45,7 +45,7 @@ public class settingTests
 			driver.nav(driver.Url);
 		  	Thread.sleep(5000);
 		  	
-		  	signin("eslam","123456");
+		  	signin("eslam","123459");
 		  	try {
 		  		login.UserInfo = driver.LocateById(login.logoutDivID);
 			}catch(Exception e) {
@@ -57,7 +57,7 @@ public class settingTests
 			Thread.sleep(1000);
 
 			try {
-				login.settingBTN = driver.LocateByXpath("//a[@class='router-link-exact-active router-link-active']");
+				login.settingBTN = driver.LocateByXpath("//*[@id='loggedbutton']//following-sibling::ul/li[3]");
 			System.out.print("fount");
 			}catch(Exception e) {
 				Reporter.log("Can't find setting btn");
@@ -66,7 +66,7 @@ public class settingTests
 			act = builder.moveToElement(login.settingBTN).click().build();
 			act.perform();
 			Thread.sleep(1000);
-		  	
+		  									// press on setting
 			
 		}
 	@AfterClass
@@ -90,32 +90,25 @@ public class settingTests
 	  	
 	  	Thread.sleep(3000);
 	  	try {
-	  		settingPage.oldpasstxt = driver.LocateByXpath("//input[@placeholder='Old Password']");
-	  		settingPage.newpasstxt = driver.LocateByXpath("//input[@placeholder='New Password']");
-	  		settingPage.usernameTXT = driver.LocateById(settingPage.usernameTXTid);
+	  		
 	  		settingPage.cancelpassBtn = driver.LocateById(settingPage.cancelpassBtnid);
 		}catch(Exception e) {
 			Reporter.log("Can't find the cancel Button ");
 			Assert.assertTrue(false);
 		}
-	  	act = builder.sendKeys(settingPage.usernameTXT,"eslam").build();
-		act.perform();
-		act = builder.sendKeys(settingPage.oldpasstxt,"123456").build();
-		act.perform();
-		act = builder.sendKeys(settingPage.newpasstxt,"123459").build();
-		act.perform();
 		
 		act = builder.moveToElement(settingPage.cancelpassBtn).click().build();
 		act.perform();
 		Thread.sleep(5000);  													 //  new pass canceled
 
-		assertNull(settingPage.newpasstxt);
+		assertNull(settingPage.usernameTXT);
 	  	
 	  	
 }
 
+
 	@Test(priority=2,description="inter wrong  username when you change pass")
-	public void wrongPass() throws Throwable
+	public void wrongusername() throws Throwable
 	{
 		try {
 			  settingPage.changepassbutton = driver.LocateById(settingPage.changepassbuttonid);
@@ -138,17 +131,23 @@ public class settingTests
 			}
 		  	act = builder.sendKeys(settingPage.usernameTXT,"eslaam").build();
 			act.perform();
-			act = builder.sendKeys(settingPage.oldpasstxt,"123456").build();
+			act = builder.sendKeys(settingPage.oldpasstxt,"123459").build();
 			act.perform();
-			act = builder.sendKeys(settingPage.newpasstxt,"123459").build();
+			act = builder.sendKeys(settingPage.newpasstxt,"123456").build();
 			act.perform();
 			
 			act = builder.moveToElement(settingPage.savepassBTN).click().build();
 			act.perform();																// enter two unmatches pass
 			
-																						//check wrong message 			
+			try {
+				  settingPage.allertmess = driver.LocateById(settingPage.allertmessid);
+				}catch(Exception e) {
+					Reporter.log("Can't find the change pasword Button ");
+					Assert.assertTrue(false);
+				}																			//check wrong message 			
+			assertNotNull(settingPage.allertmess);
 	}
-		
+	
 	@Test(priority=3,description="complete change pass test")
 	public void changePasswordTest() throws Throwable 
 	  {
@@ -171,12 +170,19 @@ public class settingTests
 				Reporter.log("Can't find the submit Button 7");
 				Assert.assertTrue(false);
 			}
-		  	act = builder.sendKeys(settingPage.oldpasstxt,"eslam").build();
+		  	settingPage.oldpasstxt.clear();
+		  	act = builder.sendKeys(settingPage.oldpasstxt,"123459").build();
 			act.perform();
+			
+			settingPage.newpasstxt.clear();
 			act = builder.sendKeys(settingPage.newpasstxt,"123456").build();
 			act.perform();
-			act = builder.sendKeys(settingPage.usernameTXT,"12359").build();
+			
+			settingPage.usernameTXT.clear();
+			act = builder.sendKeys(settingPage.usernameTXT,"eslam").build();
 			act.perform();
+		
+		  	
 			act = builder.moveToElement(settingPage.savepassBTN).click().build();
 			act.perform();
 			Thread.sleep(5000);  													 //  new pass saved
@@ -200,30 +206,7 @@ public class settingTests
 		  	act.perform();														  // logged out
 		  	
 		  	Thread.sleep(5000);
-		  	try {
-		  		login.signBtn = driver.LocateById(login.signBtnID);
-			}catch(Exception e) {
-				Reporter.log("Can't find the signIn Button ");
-				Assert.assertTrue(false);
-			}
-		  	act = builder.moveToElement(login.signBtn).click().build();
-		  	act.perform(); 
-		  	Thread.sleep(3000);
-		  	try {
-			   login.userNametxt = driver.LocateById(login.userNametxtID);
-			   login.paswordtxt = driver.LocateById(login.paswordtxtID);
-			   login.submit = driver.LocateById(login.submitID);
-			}catch(Exception e) {
-				Reporter.log("Can't find the submit Button ");
-				Assert.assertTrue(false);
-			}
-		  	
-		  	act = builder.sendKeys(login.userNametxt,"eslam").build();
-		  	act.perform();
-		  	act = builder.sendKeys(login.paswordtxt,"123459").build();
-		  	act.perform();
-		  	act = builder.moveToElement(login.submit).click().build();
-		  	act.perform();															// log in with new pass
+		  	signin("eslam","123456");													// log in with new pass
 		  	
 		  	
 		  	try {
@@ -232,7 +215,7 @@ public class settingTests
 				Reporter.log("Can't login");
 				Assert.assertTrue(false);
 			}
-		  	String actual =" eslam ";
+		  	String actual ="eslam";
 			
 		  	String expected =driver.driver.findElement(By.id(login.logoutDivID)).getText();
 			assertEquals(actual, expected);
@@ -252,7 +235,7 @@ public class settingTests
 	  	act = builder.moveToElement(login.UserInfo).click().build();
 	  	act.perform();
 		try {
-			login.settingBTN = driver.LocateByXpath("//a[@class='router-link-exact-active router-link-active']");
+			login.settingBTN = driver.LocateByXpath("//*[@id='loggedbutton']//following-sibling::ul/li[3]");
 		}catch(Exception e) {
 			Reporter.log("Can't find setting btn");
 			Assert.assertTrue(false);
@@ -291,7 +274,7 @@ public class settingTests
 				act = builder.moveToElement(login.UserInfo).click().build();
 				act.perform();
 				try {
-				login.profileBTN = driver.LocateByXpath("//a[@class='router-link-active']");
+				login.profileBTN = driver.LocateByXpath("//*[@id='loggedbutton']//following-sibling::ul/li[2]");
 				}catch(Exception e) {
 				Reporter.log("Can't find setting btn");
 				Assert.assertTrue(false);
@@ -312,10 +295,45 @@ public class settingTests
 				
 				
 	}
-	
-	
-	@Test(priority=6,description="deactivate profile test")
-	public void deactivate() throws Throwable
+	@Test(priority=5,description="deactivate profile test and cancel")
+	public void canceldeactivate() throws Throwable
+	{
+
+		 try {
+			  settingPage.deactivateaccountBTN = driver.LocateById(settingPage.deactivateaccountBTNid);
+			}catch(Exception e) {
+				Reporter.log("Can't find the change pasword Button ");
+				Assert.assertTrue(false);
+			}
+		  	act = builder.moveToElement(settingPage.deactivateaccountBTN).click().build();
+		  	act.perform(); 																// click on deactivate Button
+		  	
+		  	try {
+				  settingPage.passtodeactivateTXT = driver.LocateById(settingPage.passtodeactivateTXTid);
+				}catch(Exception e) {
+					Reporter.log("Can't find the change pasword Button ");
+					Assert.assertTrue(false);
+				}
+		  	settingPage.passtodeactivateTXT.clear();
+			  	act = builder.sendKeys(settingPage.passtodeactivateTXT,"123456").build();
+			  	act.perform(); 															// enter password
+		  	
+		  	try {
+				  settingPage.canceldeactivateBTN = driver.LocateById(settingPage.canceldeactivateBTNid);
+				}catch(Exception e) {
+					Reporter.log("Can't find the  delete Button ");
+					Assert.assertTrue(false);
+				}
+			act = builder.moveToElement(settingPage.canceldeactivateBTN).click().build();
+		  	act.perform(); 							//press on delete
+			Thread.sleep(1000);
+			
+			assertNotNull(settingPage.canceldeactivateBTN);
+			  	
+	}
+
+	@Test(priority=6,description="inter wrong pass to deactivate profile test")
+	public void wrongdeactivation() throws Throwable
 	{
 		try {
 	  		login.UserInfo = driver.LocateById(login.logoutDivID);
@@ -326,7 +344,7 @@ public class settingTests
 	  	act = builder.moveToElement(login.UserInfo).click().build();
 	  	act.perform();
 		try {
-			login.settingBTN = driver.LocateByXpath("//a[@class='router-link-exact-active router-link-active']");
+			login.settingBTN = driver.LocateByXpath("//*[@id='loggedbutton']//following-sibling::ul/li[3]");
 		}catch(Exception e) {
 			Reporter.log("Can't find setting btn");
 			Assert.assertTrue(false);
@@ -350,7 +368,65 @@ public class settingTests
 					Reporter.log("Can't find the change pasword Button ");
 					Assert.assertTrue(false);
 				}
-			  	act = builder.sendKeys(settingPage.passtodeactivateTXT,"123459").build();
+			  	act = builder.sendKeys(settingPage.passtodeactivateTXT,"123456").build();
+			  	act.perform(); 															// enter password
+		  	
+		  	try {
+				  settingPage.deletefordeactivateBTN = driver.LocateById(settingPage.deletefordeactivateBTNid);
+				}catch(Exception e) {
+					Reporter.log("Can't find the  delete Button ");
+					Assert.assertTrue(false);
+				}
+			act = builder.moveToElement(settingPage.deletefordeactivateBTN).click().build();
+		  	act.perform(); 							//press on delete
+			Thread.sleep(1000);
+			try {
+				settingPage.deletefordeactivateBTN = driver.LocateById("register-btn");
+			}catch(Exception e) {
+				Reporter.log("Can't find the signIn Button ");
+				Assert.assertTrue(false);
+			}
+			assertNotNull(login.signBtn);
+			  	
+	}
+	
+	@Test(priority=7,description="deactivate profile test")
+	public void deactivate() throws Throwable
+	{
+		try {
+	  		login.UserInfo = driver.LocateById(login.logoutDivID);
+		}catch(Exception e) {
+			Reporter.log("Can't login");
+			Assert.assertTrue(false);
+		}
+	  	act = builder.moveToElement(login.UserInfo).click().build();
+	  	act.perform();
+		try {
+			login.settingBTN = driver.LocateByXpath("//*[@id='loggedbutton']//following-sibling::ul/li[3]");
+		}catch(Exception e) {
+			Reporter.log("Can't find setting btn");
+			Assert.assertTrue(false);
+		}
+		act = builder.moveToElement(login.settingBTN).click().build();
+		act.perform();
+		Thread.sleep(1000);
+															// open setting page
+		 try {
+			  settingPage.deactivateaccountBTN = driver.LocateById(settingPage.deactivateaccountBTNid);
+			}catch(Exception e) {
+				Reporter.log("Can't find the change pasword Button ");
+				Assert.assertTrue(false);
+			}
+		  	act = builder.moveToElement(settingPage.deactivateaccountBTN).click().build();
+		  	act.perform(); 																// click on deactivate Button
+		  	
+		  	try {
+				  settingPage.passtodeactivateTXT = driver.LocateById(settingPage.passtodeactivateTXTid);
+				}catch(Exception e) {
+					Reporter.log("Can't find the change pasword Button ");
+					Assert.assertTrue(false);
+				}
+			  	act = builder.sendKeys(settingPage.passtodeactivateTXT,"123456").build();
 			  	act.perform(); 															// enter password
 		  	
 		  	try {
@@ -372,41 +448,6 @@ public class settingTests
 			  	
 	}
 
-	@Test(priority=5,description="deactivate profile test and cancel")
-	public void canceldeactivate() throws Throwable
-	{
-
-		 try {
-			  settingPage.deactivateaccountBTN = driver.LocateById(settingPage.deactivateaccountBTNid);
-			}catch(Exception e) {
-				Reporter.log("Can't find the change pasword Button ");
-				Assert.assertTrue(false);
-			}
-		  	act = builder.moveToElement(settingPage.deactivateaccountBTN).click().build();
-		  	act.perform(); 																// click on deactivate Button
-		  	
-		  	try {
-				  settingPage.passtodeactivateTXT = driver.LocateById(settingPage.passtodeactivateTXTid);
-				}catch(Exception e) {
-					Reporter.log("Can't find the change pasword Button ");
-					Assert.assertTrue(false);
-				}
-			  	act = builder.sendKeys(settingPage.passtodeactivateTXT,"123456").build();
-			  	act.perform(); 															// enter password
-		  	
-		  	try {
-				  settingPage.canceldeactivateBTN = driver.LocateById(settingPage.canceldeactivateBTNid);
-				}catch(Exception e) {
-					Reporter.log("Can't find the  delete Button ");
-					Assert.assertTrue(false);
-				}
-			act = builder.moveToElement(settingPage.canceldeactivateBTN).click().build();
-		  	act.perform(); 							//press on delete
-			Thread.sleep(1000);
-			
-			assertNull(settingPage.canceldeactivateBTN);
-			  	
-	}
 
 	void signin(String name,String pass) throws InterruptedException {
 		try {

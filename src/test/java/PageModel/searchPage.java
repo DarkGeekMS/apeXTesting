@@ -16,20 +16,19 @@ public class searchPage {
     public String user1id;
     public String post1id;
     public String errormsg1id;
-    public String searchTXTid;
-    public String postsBTNid;
+    public String searchTXTclass;
+    public String postsBTNclass;
     public String UsersBTNid;
     public String createcommunityBTNBTN;
 
 	public searchPage()
 	{
-		errormsg2id="";
-		searchTXTid ="";
-		postsBTNid="";
-		UsersBTNid="";
+		errormsg2id="subDiv";
+		searchTXTclass ="form-control";
+		postsBTNclass="router-link-exact-active router-link-active";
+		UsersBTNid="h";
 		createcommunityBTNBTN="";
-		post1id="";
-		user1id="";
+		user1id="name";
 		errormsg1id="subDiv";
 		
 	}

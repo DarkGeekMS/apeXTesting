@@ -19,6 +19,8 @@ public class profileSettingPage
     public String usernameTXTid;
     public String cancelpassBtnid;
     public String savepassBTNid;
+    public String allertmessid;
+    public WebElement allertmess;
     
     public WebElement notificationRadiobutton;
     public String notificationRadiobuttonxpath; 
@@ -60,6 +62,7 @@ public class profileSettingPage
 	    usernameTXTid="username";
    	    cancelpassBtnid="goto-signin-btn";
 	    savepassBTNid="register-btn";
+	    allertmessid="alertmesage";
 		
 	    notificationRadiobuttonxpath="//span[@class='slider round']";    
 	    

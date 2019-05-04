@@ -19,7 +19,10 @@ public class apexcomPage {
     public WebElement dropButton;
     public WebElement report;
     public WebElement hide;
+public WebElement MOderator;
+public WebElement egnoresubscribe;
     
+    public String MOderatorid; 
     public String hideid;    
     public String reportid;
     public String dropButtonid;    
@@ -55,7 +58,7 @@ public class apexcomPage {
 		hideid="HideIcon";
 	    repotformClass="v--modal-background-click";
 		reportid="ReportIcon";
-
+		MOderatorid="moderatorsbox";
 	}
 	
 	
