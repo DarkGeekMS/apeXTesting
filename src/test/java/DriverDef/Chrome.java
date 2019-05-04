@@ -24,7 +24,7 @@ public class Chrome {
 		System.setProperty("webdriver.chrome.driver",driverpath.getAbsolutePath());//write value of this driver
 		driver = new ChromeDriver(); // here you connected the driver by option
 		wait = new WebDriverWait(driver, 20);
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.manage().window().maximize();   /// maximize screen
 		Url= System.getenv("SERVER_URL");
 		if(Url == null){

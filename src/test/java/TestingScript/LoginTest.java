@@ -132,7 +132,7 @@ public class LoginTest
 			Reporter.log("Can't find the submit Button 3");
 			Assert.assertTrue(false);
 		}
-	  	act = builder.sendKeys(login.userNametxt,"King").build();
+	  	act = builder.sendKeys(login.userNametxt,"hell12").build();
 	  	act.perform();
 	  	act = builder.sendKeys(login.paswordtxt,"1212145").build();
 	  	act.perform();
@@ -396,6 +396,45 @@ public void signUp() throws InterruptedException {
 			Reporter.log("Can't  loguot");
 			Assert.assertTrue(true);
 		}
+  }
+	  
+  @Test (priority=8,description="Right mail and pass")
+  public void Test4() throws Throwable{
+	  driver.nav(driver.Url);
+	  	Thread.sleep(5000);
+	  	try {
+	  		login.signBtn = driver.LocateById(login.signBtnID);
+		}catch(Exception e) {
+			Reporter.log("Can't find the signIn Button 4");
+			Assert.assertTrue(false);
+		}
+	  	act = builder.moveToElement(login.signBtn).click().build();
+	  	act.perform(); 
+	  	Thread.sleep(3000);
+	  	try {
+		   login.userNametxt = driver.LocateById(login.userNametxtID);
+		   login.paswordtxt = driver.LocateById(login.paswordtxtID);
+		   login.submit = driver.LocateById(login.submitID);
+		}catch(Exception e) {
+			Reporter.log("Can't find the submit Button 4");
+			Assert.assertTrue(false);
+		}
+	  	act = builder.sendKeys(login.userNametxt,"hell12").build();
+	  	act.perform();
+	  	act = builder.sendKeys(login.paswordtxt,"hell12").build();
+	  	act.perform();
+	  	act = builder.moveToElement(login.submit).click().build();
+	  	act.perform();
+	  	Thread.sleep(5000);
+	  	try {
+	  		login.UserInfo = driver.LocateById(login.logoutDivID);
+		}catch(Exception e) {
+			Reporter.log("Can't login");
+			Assert.assertTrue(false);
+		}
+	  	String expected = login.UserInfo.getText();
+	  	String actual="King";
+		Assert.assertEquals(actual, expected);
   }
 	  
 }
