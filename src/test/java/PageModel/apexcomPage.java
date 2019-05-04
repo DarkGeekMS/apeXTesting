@@ -13,11 +13,9 @@ public class apexcomPage {
 	
 	public apexcomPage()
 	{
-		
 		apexcomid="subred";
 		apexcompostid="postslink";	
 		posttitleid="postslink";	
-		
 	}
 
 }

@@ -1,8 +1,6 @@
-/target/*
-/driver/*
-/test-outputs/*
-/.settings/*
+/driver/
+*test-output*/**
+/.settings/
 /.classpath
 /.project
 /target/
-
