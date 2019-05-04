@@ -927,10 +927,8 @@ public class PostTest {
 				EditXpath =  start+"//div[@id='thirdLine']/button[4]",
 				deleteXpath =  start+"//div[@id='thirdLine']/button[5]",
 				voteXpath = start+"//div[@id='firstLine']/b[1]";
-		WebElement upvote=null,downvote=null,reply=null,save=null,edit=null,delete=null,content=null,votes=null;
+		WebElement reply=null,save=null,edit=null,delete=null,content=null,votes=null;
 		try {
-			upvote=driver.LocateByXpath(upvoteXpath);
-			downvote=driver.LocateByXpath(downvoteXpath);
 			reply=driver.LocateByXpath(ReplyXpath);
 			save=driver.LocateByXpath(saveXpath);
 			edit=driver.LocateByXpath(EditXpath);

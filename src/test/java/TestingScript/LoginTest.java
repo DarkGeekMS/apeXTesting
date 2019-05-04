@@ -30,41 +30,41 @@ public class LoginTest
 		driver = new Chrome();
 		login = new LoginPage();
 		builder = new Actions(driver.driver);
-		Reporter.log("Sign up test starts");
+		System.out.println("Sign up test starts");
 	}
 	@AfterClass
 	public void finalize()
 	{
-		Reporter.log("Sign up test ends");
+		System.out.println("Sign up test ends");
 		driver.shutdown();
 	}
 
 	@Test (priority=1,description="Submit without entering data")
 	public void Test1() throws Throwable {
 		driver.nav(driver.Url);
-	   Thread.sleep(1000);
+	   Thread.sleep(3000);
 	   try {
 		    login.signBtn = driver.LocateById(login.signBtnID);
 	   }catch(Exception e) {
-			Reporter.log("Can't find the signIn Button");
+			System.out.println("Can't find the signIn Button");
 			Assert.assertTrue(false);
 		}
 	    act = builder.moveToElement(login.signBtn).click().build();
 	    act.perform();
 	    Thread.sleep(3000);
 	    try {
-		   login.submit = driver.LocateById(login.submitID);
+		   login.submit = driver.LocateByXpath("//*[@id='partition-register']/div[2]/form/button");
 		}catch(Exception e) {
-			Reporter.log("Can't find the submit Button test 1");
+			System.out.println("Can't find the submit Button test 1");
 			Assert.assertTrue(false);
 		}
 	    act = builder.moveToElement(login.submit).click().build();
 	    act.perform();
-	    Thread.sleep(3000);
+	    Thread.sleep(5000);
 	    try {
 	    	login.Errorlable = driver.LocateByXpath("//*[@id='partition-register']/div[2]/form/p[1]");
 		}catch(Exception e) {
-			Reporter.log("not stayed in sama page after submit test 1");
+			System.out.println("not stayed in sama page after submit test 1");
 			return;
 		}
 	    String expected = login.Errorlable.getText();  // take pass of lable
@@ -75,11 +75,11 @@ public class LoginTest
 	@Test (priority=2,description="Wrong user name")
 	public void Test2() throws Throwable {
 		driver.nav(driver.Url);
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		try {
 			login.signBtn = driver.LocateById(login.signBtnID);
 		}catch(Exception e) {
-			Reporter.log("Can't find the signIn Button");
+			System.out.println("Can't find the signIn Button");
 			Assert.assertTrue(false);
 		}
 		act = builder.moveToElement(login.signBtn).click().build();
@@ -88,22 +88,22 @@ public class LoginTest
 		try {
 		   login.userNametxt = driver.LocateById(login.userNametxtID);
 		   login.paswordtxt = driver.LocateById(login.paswordtxtID);
-		   login.submit = driver.LocateById(login.submitID);
+		   login.submit = driver.LocateByXpath("//*[@id=\"partition-register\"]/div[2]/form/button");
 		}catch(Exception e) {
-			Reporter.log("Can't find the signIn Button test 2");
+			System.out.println("Can't find the signIn Button test 2");
 			Assert.assertTrue(false);
 		}
-	    act = builder.sendKeys(login.userNametxt,"reem1641").build();
+	    act = builder.sendKeys(login.userNametxt,"reem1655841").build();
 		act.perform();
 		act = builder.sendKeys(login.paswordtxt,"1212145").build();
 		act.perform();
 		act = builder.moveToElement(login.submit).click().build();
 		act.perform();
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		try {
 		   login.Errorlable = driver.LocateByXpath("//*[@id='partition-register']/div[2]/form/p[1]");
 		}catch(Exception e) {
-			Reporter.log("Can't find the signIn Button test 2");
+			System.out.println("Can't find the signIn Button test 2");
 			return;
 		}
 		String expected = login.Errorlable.getText();
@@ -114,11 +114,11 @@ public class LoginTest
   @Test (priority=3,description="Wrong password")
   public void Test3() throws Throwable {
 	  driver.nav(driver.Url);
-	  	Thread.sleep(1000);
+	  	Thread.sleep(3000);
 	  	try {
 		   login.signBtn = driver.LocateById(login.signBtnID);
 		}catch(Exception e) {
-			Reporter.log("Can't find the signIn Button 3");
+			System.out.println("Can't find the signIn Button 3");
 			Assert.assertTrue(false);
 		}
 	  	act = builder.moveToElement(login.signBtn).click().build();
@@ -127,9 +127,9 @@ public class LoginTest
 	  	try {
 		   login.userNametxt = driver.LocateById(login.userNametxtID);
 		   login.paswordtxt = driver.LocateById(login.paswordtxtID);
-		   login.submit = driver.LocateById(login.submitID);
+		   login.submit = driver.LocateByXpath("//*[@id=\"partition-register\"]/div[2]/form/button");
 		}catch(Exception e) {
-			Reporter.log("Can't find the submit Button 3");
+			System.out.println("Can't find the submit Button 3");
 			Assert.assertTrue(false);
 		}
 	  	act = builder.sendKeys(login.userNametxt,"hell12").build();
@@ -142,7 +142,7 @@ public class LoginTest
 	  	try {
 	  		login.Errorlable = driver.LocateByXpath("//*[@id='partition-register']/div[2]/form/p[1]");
 	  	}catch(Exception e) {
-			Reporter.log("Can't find the signIn Button test 2");
+			System.out.println("Can't find the signIn Button test 2");
 			return;
 		}
 	  	String expected = login.Errorlable.getText();
@@ -153,11 +153,11 @@ public class LoginTest
   @Test (priority=5,description="Forget username")
   public void ForgetUsername() throws InterruptedException {
 	  driver.nav(driver.Url);
-	  	Thread.sleep(1000);
+	  	Thread.sleep(3000);
 	  	try {
 	  		login.signBtn = driver.LocateById(login.signBtnID);
 		}catch(Exception e) {
-			Reporter.log("Can't find the signIn Button 5");
+			System.out.println("Can't find the signIn Button 5");
 			Assert.assertTrue(false);
 		}
 	  	act = builder.moveToElement(login.signBtn).click().build();
@@ -166,7 +166,7 @@ public class LoginTest
 	  	try {
 		   login.forgetname =driver.LocateByXpath("//a[@class='btn btn-link'][1]");
 		}catch(Exception e) {
-			Reporter.log("Can't find the submit Button 5");
+			System.out.println("Can't find the submit Button 5");
 			Assert.assertTrue(false);
 		}
 	  	act = builder.moveToElement(login.forgetname).click().build();
@@ -184,7 +184,7 @@ public class LoginTest
 		  	act.perform();
 		  	act = builder.sendKeys(login.paswordtxt,Keys.chord(Keys.CONTROL, "a"), Keys.BACK_SPACE).build();
 		  	act.perform();
-		  	Thread.sleep(1000);
+		  	Thread.sleep(3000);
 		  	act = builder.sendKeys(login.userNametxt,"salma").build();
 		  	act.perform();
 		  	act = builder.sendKeys(login.paswordtxt,"123456").build();
@@ -206,11 +206,11 @@ public class LoginTest
   @Test (priority=6,description="Forget password")
   public void ForgetPassword() throws InterruptedException {
 	  driver.nav(driver.Url);
-  		Thread.sleep(1000);
+  		Thread.sleep(3000);
   		try {
   			login.signBtn = driver.LocateById(login.signBtnID);
 		}catch(Exception e) {
-			Reporter.log("Can't find the signIn Button 6");
+			System.out.println("Can't find the signIn Button 6");
 			Assert.assertTrue(false);
 		}
   		act = builder.moveToElement(login.signBtn).click().build();
@@ -220,7 +220,7 @@ public class LoginTest
   			login.forgotpasLable =driver.LocateByXpath("//a[@class='btn btn-link'][2]");
 		   
 		}catch(Exception e) {
-			Reporter.log("Can't find the submit Button 6");
+			System.out.println("Can't find the submit Button 6");
 			Assert.assertTrue(false);
 		}
   		act = builder.moveToElement(login.forgotpasLable).click().build();
@@ -234,7 +234,7 @@ public class LoginTest
 				Assert.assertTrue(false);
 			}
 		  	
-		  	Thread.sleep(1000);
+		  	Thread.sleep(3000);
 		  	act = builder.sendKeys(login.userNametxt,"salma").build();
 		  	act.perform();
 		  	act = builder.sendKeys(login.paswordtxt,"salma@gmail.com").build();
@@ -255,11 +255,20 @@ public class LoginTest
 @Test (priority=7,description="sign up test")
 public void signUp() throws InterruptedException {
   driver.nav(driver.Url);
-		Thread.sleep(1000);
+		Thread.sleep(3000);
+		try {
+  			login.signBtn = driver.LocateById(login.signBtnID);
+		}catch(Exception e) {
+			System.out.println("Can't find the signIn Button 6");
+			Assert.assertTrue(false);
+		}
+  		act = builder.moveToElement(login.signBtn).click().build();
+  		act.perform(); 
+  		Thread.sleep(3000);
 		try {
 			login.signupBTN = driver.LocateByXpath("//a[@class='btn btn-link'][1]");
 	}catch(Exception e) {
-		Reporter.log("Can't find the signIn Button 6");
+		System.out.println("Can't find the signIn Button 6");
 		Assert.assertTrue(false);
 	}
 		act = builder.moveToElement(login.signupBTN).click().build();
@@ -269,27 +278,17 @@ public void signUp() throws InterruptedException {
 			login.nextBTN =driver.LocateById("closebtn");
 	   
 	}catch(Exception e) {
-		Reporter.log("Can't find the submit Button 6");
+		System.out.println("Can't find the submit Button 6");
 		Assert.assertTrue(false);
 	}
-		act = builder.moveToElement(login.nextBTN).click().build();
-		act.perform();
-		try {
-			   login.close = driver.LocateById("closebtn");
-			   	}catch(Exception e) {
-				System.out.println("Can't find the submit Button ");
-				Assert.assertTrue(false);
-			}
-	  	act = builder.moveToElement(login.close).click().build();
-	  	act.perform();
-		assertNotNull(login.signBtn);  
+		
 }
 
 	  
   @Test (priority=8,description="Right mail and pass")
   public void LOgin() throws Throwable {
 	  driver.nav(driver.Url);
-	  	Thread.sleep(1000);
+	  	Thread.sleep(3000);
 	  	try {
 	  		login.signBtn = driver.LocateById(login.signBtnID);
 		}catch(Exception e) {
@@ -328,7 +327,7 @@ public void signUp() throws InterruptedException {
 	  	try {
 	  		login.UserInfo = driver.LocateById(login.logoutDivID);
 		}catch(Exception e) {
-			Reporter.log("Can't login");
+			System.out.println("Can't login");
 			Assert.assertTrue(false);
 		}
 	  	String expected = "salma";
@@ -339,39 +338,8 @@ public void signUp() throws InterruptedException {
   @Test (priority=9,description="Logout")
   public void Logout() throws Throwable {
 	  driver.nav(driver.Url);
-	  	Thread.sleep(1000);
-	  	try {
-	  		login.signBtn = driver.LocateById(login.signBtnID);
-		}catch(Exception e) {
-			Reporter.log("Can't find the signIn Button 7");
-			Assert.assertTrue(false);
-		}
-	  	act = builder.moveToElement(login.signBtn).click().build();
-	  	act.perform(); 
 	  	Thread.sleep(3000);
-	  	try {
-		   login.userNametxt = driver.LocateById(login.userNametxtID);
-		   login.paswordtxt = driver.LocateById(login.paswordtxtID);
-		   login.submit = driver.LocateById(login.submitID);
-		}catch(Exception e) {
-			Reporter.log("Can't find the submit Button 7");
-			Assert.assertTrue(false);
-		}
-	  	act = builder.sendKeys(login.userNametxt,Keys.chord(Keys.CONTROL, "a"), Keys.BACK_SPACE).build();
-	  	act.perform();
-	  	act = builder.sendKeys(login.paswordtxt,Keys.chord(Keys.CONTROL, "a"), Keys.BACK_SPACE).build();
-	  	act.perform();
-	  	Thread.sleep(1000);
-	  	act = builder.sendKeys(login.userNametxt,"salma").build();
-		act.perform();
-		act = builder.sendKeys(login.paswordtxt,"123456").build();
-		act.perform();
-		act = builder.moveToElement(login.submit).click().build();
-		act.perform();
-		Thread.sleep(1000);
-
-
-		
+	  	
 		try {
 			login.logout = driver.LocateById(login.logoutDivID);
 		}catch(Exception e) {
@@ -380,7 +348,7 @@ public void signUp() throws InterruptedException {
 		}
 	  	act = builder.moveToElement(login.logout).click().build();
 		act.perform();
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		try {
 			login.logoutButton = driver.LocateByXpath("//*[@id='loggedbutton']//following-sibling::ul/li[5]");
 		}catch(Exception e) {
@@ -389,52 +357,13 @@ public void signUp() throws InterruptedException {
 		}
 		act = builder.moveToElement(login.logoutButton).click().build();
 		act.perform();
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		try {
 			login.signBtn = driver.LocateById(login.signBtnID);
 		}catch(Exception e) {
-			Reporter.log("Can't  loguot");
+			System.out.println("Can't  loguot");
 			Assert.assertTrue(true);
 		}
-  }
-	  
-  @Test (priority=8,description="Right mail and pass")
-  public void Test4() throws Throwable{
-	  driver.nav(driver.Url);
-	  	Thread.sleep(5000);
-	  	try {
-	  		login.signBtn = driver.LocateById(login.signBtnID);
-		}catch(Exception e) {
-			Reporter.log("Can't find the signIn Button 4");
-			Assert.assertTrue(false);
-		}
-	  	act = builder.moveToElement(login.signBtn).click().build();
-	  	act.perform(); 
-	  	Thread.sleep(3000);
-	  	try {
-		   login.userNametxt = driver.LocateById(login.userNametxtID);
-		   login.paswordtxt = driver.LocateById(login.paswordtxtID);
-		   login.submit = driver.LocateById(login.submitID);
-		}catch(Exception e) {
-			Reporter.log("Can't find the submit Button 4");
-			Assert.assertTrue(false);
-		}
-	  	act = builder.sendKeys(login.userNametxt,"hell12").build();
-	  	act.perform();
-	  	act = builder.sendKeys(login.paswordtxt,"hell12").build();
-	  	act.perform();
-	  	act = builder.moveToElement(login.submit).click().build();
-	  	act.perform();
-	  	Thread.sleep(5000);
-	  	try {
-	  		login.UserInfo = driver.LocateById(login.logoutDivID);
-		}catch(Exception e) {
-			Reporter.log("Can't login");
-			Assert.assertTrue(false);
-		}
-	  	String expected = login.UserInfo.getText();
-	  	String actual="King";
-		Assert.assertEquals(actual, expected);
   }
 	  
 }
