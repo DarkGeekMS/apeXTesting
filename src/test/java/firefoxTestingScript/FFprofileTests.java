@@ -337,9 +337,8 @@ public void test5() throws Throwable
 	    int x =BlockedUsersList.size();
 	    for(int i=0;i<x;i++)
 	    {
-	    	Reporter.log(BlockedUsersList.get(i).getText());
-	    	if (BlockedUsersList.get(i).getText().equals("sayed"))
-
+	    	System.out.println(BlockedUsersList.get(i).getText());
+	    	if (BlockedUsersList.get(i).getText().equals(userName))
 	    	{
 	    		getUser=true;
 	    	}
