@@ -8,7 +8,9 @@ import org.openqa.selenium.WebElement;
 
 public class LoginPage {
 	//public WebDriver driver;
-
+	public WebElement nextBTN;
+	public WebElement close;
+	public WebElement signupBTN;
 	public WebElement signBtn;
 	public WebElement submit;
 	public WebElement userNametxt;

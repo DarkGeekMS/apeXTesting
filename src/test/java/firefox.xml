@@ -2,7 +2,51 @@
 <suite name="Suite" parallel="false">
   <test name="Test">
     <classes>
+      <class name="firefoxTestingScript.FFapexcom"/>
+    </classes>
+  </test> <!-- Test -->
+  
+  <test name="Test">
+    <classes>
+      <class name="firefoxTestingScript.FFloginTest"/>
+    </classes>
+  </test> <!-- Test -->
+  
+  <test name="Test2">
+    <classes>
+      <class name="firefoxTestingScript.FFnavigationTests"/>
+    </classes>
+  </test> <!-- Test -->
+  
+  <test name="Test3">
+    <classes>
+      <class name="firefoxTestingScript.FFpostTests"/>
+    </classes>
+  </test> <!-- Test -->
+  
+  <test name="Test4">
+    <classes>
+      <class name="firefoxTestingScript.FFprofileTests"/>
+    </classes>
+  </test> <!-- Test -->
+  
+  <test name="Test5">
+    <classes>
       <class name="firefoxTestingScript.FFsearchTests"/>
     </classes>
   </test> <!-- Test -->
+  
+  <test name="Test6">
+    <classes>
+      <class name="firefoxTestingScript.FFsettingTests"/>
+    </classes>
+  </test> <!-- Test -->
+  <test name="Test7">
+    <classes>
+      <class name="firefoxTestingScript.FFsignupTests"/>
+    </classes>
+  </test> <!-- Test -->
+  
+  
+  
 </suite> <!-- Suite -->
