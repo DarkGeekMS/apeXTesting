@@ -16,6 +16,8 @@ import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
+import DriverDef.Chrome;
 import DriverDef.Firefox;
 import PageModel.LoginPage;
 import PageModel.profilePage;
@@ -86,7 +88,6 @@ public class FFprofileTests {
 		act.perform();
 		Thread.sleep(5000);
 	}
-	
 	@BeforeClass
 	public void init() throws Throwable
 	{
@@ -276,15 +277,16 @@ public void test5() throws Throwable
 		}
 		act = builder.moveToElement(ProfPage.homeBTN).click().build();
 		act.perform();
-		
+									//open home
 		try {
 			ProfPage.user = driver.LocateById(ProfPage.userid);
 			}catch(Exception e) {
 			Reporter.log("Can't login");
 			Assert.assertTrue(false);
 			}
+			String userName=ProfPage.user.getText();
 			act = builder.moveToElement(ProfPage.user).click().build();
-			act.perform();
+			act.perform();									//open user
 			try {
 				ProfPage.blockBTN = driver.LocateById("blocktbutton");
 				}catch(Exception e) {
@@ -293,8 +295,17 @@ public void test5() throws Throwable
 				}
 				act = builder.moveToElement(ProfPage.blockBTN).click().build();
 				act.perform();
-			
-
+																	
+														//block user
+				try {
+					ProfPage.blockBTN = driver.LocateByXpath("//button[@class='swal-button swal-button--confirm']");
+					}catch(Exception e) {
+					Reporter.log("Can't login");
+					Assert.assertTrue(false);
+					}
+					act = builder.moveToElement(ProfPage.blockBTN).click().build();
+					act.perform();
+										//confirm block	
 	try {
 		login.UserInfo = driver.LocateById(login.logoutDivID);
 		}catch(Exception e) {
@@ -328,6 +339,7 @@ public void test5() throws Throwable
 	    {
 	    	Reporter.log(BlockedUsersList.get(i).getText());
 	    	if (BlockedUsersList.get(i).getText().equals("sayed"))
+
 	    	{
 	    		getUser=true;
 	    	}
@@ -336,7 +348,7 @@ public void test5() throws Throwable
 		
 }
 
-@Test(priority=6,description=" search for acount from post and Plock user")
+@Test(priority=6,description=" search for acount and Plock user")
 public void test6() throws Throwable 
 {
 	try {
@@ -354,6 +366,7 @@ public void test6() throws Throwable
 				Reporter.log("Can't find the searchTXT");
 				AssertJUnit.assertTrue(false);
 			}
+		String userName ="hellie";
 		   act = builder.sendKeys(st.searchTXT,"hellie").build();
 			act.perform();
 			st.searchTXT.sendKeys(Keys.ENTER);		//search done about something
@@ -385,25 +398,7 @@ public void test6() throws Throwable
 		    act = builder.moveToElement(ProfPage.blockBTN ).click().build();
 		    act.perform();						// oblock user
 		    
-		    
-		try {
-			ProfPage.user = driver.LocateById(ProfPage.userid);
-			}catch(Exception e) {
-			Reporter.log("Can't login");
-			Assert.assertTrue(false);
-			}
-			act = builder.moveToElement(ProfPage.user).click().build();
-			act.perform();
-			try {
-				ProfPage.blockBTN = driver.LocateById("blocktbutton");
-				}catch(Exception e) {
-				Reporter.log("Can't login");
-				Assert.assertTrue(false);
-				}
-				act = builder.moveToElement(ProfPage.blockBTN).click().build();
-				act.perform();
-				
-				try {
+		   try {
 					ProfPage.blockBTN = driver.LocateByXpath("//button[@class='swal-button swal-button--confirm']");
 					}catch(Exception e) {
 					Reporter.log("Can't login");
@@ -412,16 +407,48 @@ public void test6() throws Throwable
 					act = builder.moveToElement(ProfPage.blockBTN).click().build();
 					act.perform();
 										//confirm block
-			
+					try {
+						login.UserInfo = driver.LocateById(login.logoutDivID);
+						}catch(Exception e) {
+						Reporter.log("Can't login");
+						Assert.assertTrue(false);
+						}
+					act = builder.moveToElement(login.UserInfo).click().build();
+					act.perform();
+					try {
+						login.profileBTN = driver.LocateByXpath("//*[@id='loggedbutton']//following-sibling::ul/li[2]");
+						}catch(Exception e) {
+							Reporter.log("Can't find setting btn");
+							Assert.assertTrue(false);
+							}
+					act = builder.moveToElement(login.profileBTN).click().build();
+					act.perform();
+					Thread.sleep(1000);		//open profile			
+								
+					try {
+						ProfPage.blockBTN = driver.LocateById(ProfPage.blockBTNid);
+						}catch(Exception e) {
+						Reporter.log("Can't login");
+						Assert.assertTrue(false);
+						}
+						act = builder.moveToElement(ProfPage.blockBTN).click().build();
+						act.perform();
+						boolean getUser=false;
+						List<WebElement>  BlockedUsersList = driver.driver.findElements(By.xpath("//*[@id='box']//p"));
+					    int x =BlockedUsersList.size();
+					    System.out.println(BlockedUsersList.size());
+					    for(int i=0;i<x;i++)
+					    {
+					    	System.out.println(BlockedUsersList.get(i).getText());
+					    	if (BlockedUsersList.get(i).getText().equals(userName))
+					    	{
+					    		getUser=true;
+					    	}
+					    }
+					    assertTrue(getUser);
+						
 
-	try {
-		login.UserInfo = driver.LocateById("main");
-		}catch(Exception e) {
-		Reporter.log("Can't login");
-		Assert.assertTrue(false);
-		}
 	
-	    assertNotNull(login.UserInfo);
 		
 }
 
