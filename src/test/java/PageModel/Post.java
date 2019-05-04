@@ -12,6 +12,7 @@ public class Post {
 	public WebElement PostDownVote;
 	public WebElement PostExtra;
 	public WebElement HideIcon;
+	public WebElement Report;
 	public WebElement PostVote;
 	public WebElement PostContent;
 	public WebElement time;
@@ -22,33 +23,35 @@ public class Post {
 	public WebElement SubReddit;
 	public WebElement Message;
 	
-	public String FullPostId;
-	public String PostBodyId;
-	public String CommentButtonId;
-	public String PostSaveButtonId;
-	public String PostUpVoteId;
-	public String PostDownVoteId;
-	public String PostExtraId;
-	public String PostVoteId;
+	public String FullPostXPath;
+	public String PostBodyXPath;
+	public String CommentButtonXPath;
+	public String PostSaveButtonXPath;
+	public String PostUpVoteXPath;
+	public String PostDownVoteXPath;
+	public String PostExtraXPath;
+	public String PostVoteXPath;
 	public String PostContentId;
 	public String TimeId;
 	public String UserId;
 	public String SubRedditId;
-	
+	public String PostHideXpath;
+	public String PostReportXpath;
 	public String CommentSpaceId;
 	public String InnerCommentButtonId;
 	public String CommentId;
 	public Post()
 	{
-		FullPostId = "postCol2";
-		PostBodyId = "postBody";
-		
-		CommentButtonId = "commentButton";
-		PostSaveButtonId = "SaveButton";
-		PostUpVoteId = "up";
-		PostDownVoteId = "down";
-		PostExtraId = "DropButton";
-		PostVoteId = "PostVote";
+		FullPostXPath = "//*[@id='post']";
+		PostBodyXPath = "//*[@id='postBody']";
+		CommentButtonXPath = "//*[@id='post']//footer//button[@id='commentButton']";
+		PostSaveButtonXPath = "//*[@id='post']//footer//button[@id='SaveButton']";
+		PostUpVoteXPath = "//*[@id='post']//button[@id='up']";
+		PostDownVoteXPath = "//*[@id='post']//button[@id='down']";
+		PostExtraXPath = "//*[@id='post']//button[@id='DropButton']";
+		PostVoteXPath = "//*[@id='post']//h5[@id='PostVote']";
+		PostHideXpath = "//*[@id='post']//button[@id='DropButton']//following-sibling::ul/li[1]";
+		PostReportXpath = "//*[@id='post']//button[@id='DropButton']//following-sibling::ul/li[2]";
 		PostContentId = "PostContent";
 		TimeId = "timeAgo";
 		UserId = "user";

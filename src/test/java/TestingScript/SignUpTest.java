@@ -31,13 +31,13 @@ public class SignUpTest {
 		page = new SignUpPage();
 		login = new LoginPage();
 		builder = new Actions(driver.driver);
-		System.out.println("Sign up test starts");
+		Reporter.log("Sign up test starts");
 	}
 	@AfterClass
 	public void finalize()
 	{
 		driver.shutdown();
-		System.out.println("Sign up test ends");
+		Reporter.log("Sign up test ends");
 	}
 	
 	@Test(description="Entering inValid Email then press Next or Empty Email",priority=0)
@@ -48,7 +48,7 @@ public class SignUpTest {
 		try {
 			page.SignUpButton = driver.LocateById(page.SignUpButtonId);
 		}catch(Exception e) {
-			System.out.println("Can't find the SignUp Button");
+			Reporter.log("Can't find the SignUp Button");
 			Assert.assertTrue(false);
 		}
 		act = builder.moveToElement(page.SignUpButton).click().build();
@@ -58,7 +58,7 @@ public class SignUpTest {
 			page.Email = driver.LocateById(page.EmailId);
 			page.Next = driver.LocateById(page.NextId);
 		}catch(Exception e) {
-			System.out.println("Missing Elements in SignUp1 Page");
+			Reporter.log("Missing Elements in SignUp1 Page");
 			Assert.assertTrue(false);
 		}
 		act = builder.moveToElement(page.Next).click().build();
@@ -66,7 +66,7 @@ public class SignUpTest {
 		try {
 			page.ErrorLabel = driver.LocateById(page.ErrorLabelId);
 		}catch(Exception e){
-			System.out.println("Right Email Formula");
+			Reporter.log("Right Email Formula");
 			Assert.assertTrue(false);
 		}
 		Assert.assertEquals(page.ErrorLabel.getText(),"Email is required");
@@ -78,7 +78,7 @@ public class SignUpTest {
 		try {
 			page.ErrorLabel = driver.LocateById(page.ErrorLabelId);
 		}catch(Exception e){
-			System.out.println("Right Email Formula");
+			Reporter.log("Right Email Formula");
 			Assert.assertTrue(false);
 		}
 		Assert.assertEquals(page.ErrorLabel.getText(),"please fix your email to continue");
@@ -90,7 +90,7 @@ public class SignUpTest {
 		try {
 			page.ErrorLabel = driver.LocateById(page.ErrorLabelId);
 		}catch(Exception e){
-			System.out.println("Right Email Formula");
+			Reporter.log("Right Email Formula");
 			Assert.assertTrue(false);
 		}
 		Assert.assertEquals(page.ErrorLabel.getText(),"please fix your email to continue");
@@ -102,11 +102,11 @@ public class SignUpTest {
 		try {
 			page.ErrorLabel = driver.LocateById(page.ErrorLabelId);
 		}catch(Exception e){
-			System.out.println("Right Email Formula");
+			Reporter.log("Right Email Formula");
 			Assert.assertTrue(false);
 		}
 		Assert.assertEquals(page.ErrorLabel.getText(),"please fix your email to continue");
-		System.out.println("Test 1 Passed");
+		Reporter.log("Test 1 Passed");
 	}
 	
 	@Test(description="Entering Valid Email then press Next then press back",priority=1)
@@ -117,7 +117,7 @@ public class SignUpTest {
 		try {
 			page.SignUpButton = driver.LocateById(page.SignUpButtonId);
 		}catch(Exception e) {
-			System.out.println("Can't find the SignUp Button");
+			Reporter.log("Can't find the SignUp Button");
 			Assert.assertTrue(false);
 		}
 		act = builder.moveToElement(page.SignUpButton).click().build();
@@ -127,7 +127,7 @@ public class SignUpTest {
 			page.Email = driver.LocateById(page.EmailId);
 			page.Next = driver.LocateById(page.NextId);
 		}catch(Exception e) {
-			System.out.println("Missing Elements in SignUp1 Page");
+			Reporter.log("Missing Elements in SignUp1 Page");
 			Assert.assertTrue(false);
 		}
 		act = builder.sendKeys(page.Email,"mohamed1989877@gmail.com").build();
@@ -138,7 +138,7 @@ public class SignUpTest {
 		try {
 			page.Back = driver.LocateById(page.BackId);
 		}catch(Exception e) {
-			System.out.println("Can't Find Back Button");
+			Reporter.log("Can't Find Back Button");
 			Assert.assertTrue(false);
 		}
 		act = builder.moveToElement(page.Back).click().build();
@@ -147,10 +147,10 @@ public class SignUpTest {
 		try {
 			page.Back = driver.LocateById(page.BackId);
 		}catch(Exception e) {
-			System.out.println("Test 2 Passed");
+			Reporter.log("Test 2 Passed");
 			return;
 		}
-		System.out.println("Didn't Go Back");
+		Reporter.log("Didn't Go Back");
 		Assert.assertTrue(false);
 		
 	}
@@ -164,7 +164,7 @@ public class SignUpTest {
 		try {
 			page.SignUpButton = driver.LocateById(page.SignUpButtonId);
 		}catch(Exception e) {
-			System.out.println("Can't find the SignUp Button");
+			Reporter.log("Can't find the SignUp Button");
 			Assert.assertTrue(false);
 		}
 		act = builder.moveToElement(page.SignUpButton).click().build();
@@ -174,7 +174,7 @@ public class SignUpTest {
 			page.Email = driver.LocateById(page.EmailId);
 			page.Next = driver.LocateById(page.NextId);
 		}catch(Exception e) {
-			System.out.println("Missing Elements in SignUp1 Page");
+			Reporter.log("Missing Elements in SignUp1 Page");
 			Assert.assertTrue(false);
 		}
 		act = builder.sendKeys(page.Email,"m98@gmail.com").build();
@@ -188,7 +188,7 @@ public class SignUpTest {
 			page.Back = driver.LocateById(page.BackId);
 			page.Finish = driver.LocateById(page.FinishId);
 		}catch(Exception e) {
-			System.out.println("Missing Elements in SignUp2 Page");
+			Reporter.log("Missing Elements in SignUp2 Page");
 			Assert.assertTrue(false);
 		}
 		act = builder.sendKeys(page.Password,"mohamed").build();
@@ -204,7 +204,7 @@ public class SignUpTest {
 		act.perform();
 		Thread.sleep(1000);
 		Assert.assertTrue(!page.Finish.isEnabled());
-		System.out.println("Test 3 Passed");
+		Reporter.log("Test 3 Passed");
 	}
 	
 	
@@ -216,7 +216,7 @@ public class SignUpTest {
 		try {
 			page.SignUpButton = driver.LocateById(page.SignUpButtonId);
 		}catch(Exception e) {
-			System.out.println("Can't find the SignUp Button");
+			Reporter.log("Can't find the SignUp Button");
 			Assert.assertTrue(false);
 		}
 		act = builder.moveToElement(page.SignUpButton).click().build();
@@ -226,7 +226,7 @@ public class SignUpTest {
 			page.Email = driver.LocateById(page.EmailId);
 			page.Next = driver.LocateById(page.NextId);
 		}catch(Exception e) {
-			System.out.println("Missing Elements in SignUp1 Page");
+			Reporter.log("Missing Elements in SignUp1 Page");
 			Assert.assertTrue(false);
 		}
 		act = builder.sendKeys(page.Email,"mohamed@live.com").build();
@@ -240,7 +240,7 @@ public class SignUpTest {
 			page.Back = driver.LocateById(page.BackId);
 			page.Finish = driver.LocateById(page.FinishId);
 		}catch(Exception e) {
-			System.out.println("Missing Elements in SignUp2 Page");
+			Reporter.log("Missing Elements in SignUp2 Page");
 			Assert.assertTrue(false);
 		}
 		act = builder.sendKeys(page.UserName,"Deepo12").build();
@@ -249,16 +249,16 @@ public class SignUpTest {
 		act.perform();
 		act = builder.moveToElement(page.Finish).click().build();
 		act.perform();
-		Thread.sleep(3000);
+		Thread.sleep(10000);
 		WebElement ErrorLabel = null;
 		try {
-			ErrorLabel = driver.LocateByXpath("//*[@id=\"partition-register\"]/div[3]/form/div[1]/p[1]");
+			ErrorLabel = driver.LocateByXpath("//*[@id='partition-register']/div[3]/form/div[1]/p[2]");
 		}catch(Exception e) {
-			System.out.println("Can't Find Error Label");
+			Reporter.log("Can't Find Error Label");
 			Assert.assertTrue(false);
 		}
 		Assert.assertEquals(ErrorLabel.getText(), "Invalid email or Email already exists");
-		System.out.println("Test 4 Passed");
+		Reporter.log("Test 4 Passed");
 	}
 	
 	@Test(description="Entering With Existing userName",priority=4)
@@ -269,7 +269,7 @@ public class SignUpTest {
 		try {
 			page.SignUpButton = driver.LocateById(page.SignUpButtonId);
 		}catch(Exception e) {
-			System.out.println("Can't find the SignUp Button");
+			Reporter.log("Can't find the SignUp Button");
 			Assert.assertTrue(false);
 		}
 		act = builder.moveToElement(page.SignUpButton).click().build();
@@ -279,10 +279,10 @@ public class SignUpTest {
 			page.Email = driver.LocateById(page.EmailId);
 			page.Next = driver.LocateById(page.NextId);
 		}catch(Exception e) {
-			System.out.println("Missing Elements in SignUp1 Page");
+			Reporter.log("Missing Elements in SignUp1 Page");
 			Assert.assertTrue(false);
 		}
-		act = builder.sendKeys(page.Email,"mohamed1664@live.com").build();
+		act = builder.sendKeys(page.Email,"mohamed1d664@live.com").build();
 		act.perform();
 		act = builder.moveToElement(page.Next).click().build();
 		act.perform();
@@ -293,25 +293,25 @@ public class SignUpTest {
 			page.Back = driver.LocateById(page.BackId);
 			page.Finish = driver.LocateById(page.FinishId);
 		}catch(Exception e) {
-			System.out.println("Missing Elements in SignUp2 Page");
+			Reporter.log("Missing Elements in SignUp2 Page");
 			Assert.assertTrue(false);
 		}
-		act = builder.sendKeys(page.UserName,"Deepo1").build();
+		act = builder.sendKeys(page.UserName,"hell12").build();
 		act.perform();
 		act = builder.sendKeys(page.Password,"mohamed").build();
 		act.perform();
 		act = builder.moveToElement(page.Finish).click().build();
 		act.perform();
-		Thread.sleep(3000);
+		Thread.sleep(10000);
 		WebElement ErrorLabel = null;
 		try {
-			ErrorLabel = driver.LocateByXpath("//*[@id='partition-register']/div[3]/form/div[1]/p[1]");
+			ErrorLabel = driver.LocateByXpath("//*[@id='partition-register']/div[3]/form/div[1]/p[2]");
 		}catch(Exception e) {
-			System.out.println("Can't Find Error Label");
+			Reporter.log("Can't Find Error Label");
 			Assert.assertTrue(false);
 		}
-		Assert.assertEquals(ErrorLabel.getText(), "That username is already taken");
-		System.out.println("Test 5 Passed");
+		Assert.assertEquals(ErrorLabel.getText(), "Username already exists");
+		Reporter.log("Test 5 Passed");
 	}
 	
 	@Test(description="Entering With Long Email",priority=5)
@@ -322,7 +322,7 @@ public class SignUpTest {
 		try {
 			page.SignUpButton = driver.LocateById(page.SignUpButtonId);
 		}catch(Exception e) {
-			System.out.println("Can't find the SignUp Button");
+			Reporter.log("Can't find the SignUp Button");
 			Assert.assertTrue(false);
 		}
 		act = builder.moveToElement(page.SignUpButton).click().build();
@@ -332,7 +332,7 @@ public class SignUpTest {
 			page.Email = driver.LocateById(page.EmailId);
 			page.Next = driver.LocateById(page.NextId);
 		}catch(Exception e) {
-			System.out.println("Missing Elements in SignUp1 Page");
+			Reporter.log("Missing Elements in SignUp1 Page");
 			Assert.assertTrue(false);
 		}
 		act = builder.sendKeys(page.Email,"mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm@live.com").build();
@@ -346,7 +346,7 @@ public class SignUpTest {
 			page.Back = driver.LocateById(page.BackId);
 			page.Finish = driver.LocateById(page.FinishId);
 		}catch(Exception e) {
-			System.out.println("Missing Elements in SignUp2 Page");
+			Reporter.log("Missing Elements in SignUp2 Page");
 			Assert.assertTrue(false);
 		}
 		act = builder.sendKeys(page.UserName,"deeeeepo").build();
@@ -355,16 +355,16 @@ public class SignUpTest {
 		act.perform();
 		act = builder.moveToElement(page.Finish).click().build();
 		act.perform();
-		Thread.sleep(3000);
+		Thread.sleep(10000);
 		WebElement ErrorLabel = null;
 		try {
-			ErrorLabel = driver.LocateByXpath("//*[@id='partition-register']/div[3]/form/div[1]/p[1]");
+			ErrorLabel = driver.LocateByXpath("//*[@id='partition-register']/div[3]/form/div[1]/p[2]");
 		}catch(Exception e) {
-			System.out.println("Can't Find Error Label");
+			Reporter.log("Can't Find Error Label");
 			Assert.assertTrue(false);
 		}
 		Assert.assertEquals(ErrorLabel.getText(), "Invalid email or Email already exists");
-		System.out.println("Test 6 Passed");
+		Reporter.log("Test 6 Passed");
 	}
 	@Test(description="Entering With Long user name or spaced user name",priority=6)
 	public void test7() throws InterruptedException
@@ -374,7 +374,7 @@ public class SignUpTest {
 		try {
 			page.SignUpButton = driver.LocateById(page.SignUpButtonId);
 		}catch(Exception e) {
-			System.out.println("Can't find the SignUp Button");
+			Reporter.log("Can't find the SignUp Button");
 			Assert.assertTrue(false);
 		}
 		act = builder.moveToElement(page.SignUpButton).click().build();
@@ -384,7 +384,7 @@ public class SignUpTest {
 			page.Email = driver.LocateById(page.EmailId);
 			page.Next = driver.LocateById(page.NextId);
 		}catch(Exception e) {
-			System.out.println("Missing Elements in SignUp1 Page");
+			Reporter.log("Missing Elements in SignUp1 Page");
 			Assert.assertTrue(false);
 		}
 		act = builder.sendKeys(page.Email,"mohamed12345@live.com").build();
@@ -398,7 +398,7 @@ public class SignUpTest {
 			page.Back = driver.LocateById(page.BackId);
 			page.Finish = driver.LocateById(page.FinishId);
 		}catch(Exception e) {
-			System.out.println("Missing Elements in SignUp2 Page");
+			Reporter.log("Missing Elements in SignUp2 Page");
 			Assert.assertTrue(false);
 		}
 		act = builder.sendKeys(page.UserName,"mmkmmmmmmmkkkmmmmmmmmmmmmmmmkmmmmmmmm").build();
@@ -412,10 +412,10 @@ public class SignUpTest {
 		try {
 			ErrorLabel = driver.LocateByXpath("//*[@id='partition-register']/div[3]/form/div[1]/span[1]");
 		}catch(Exception e) {
-			System.out.println("Can't Find Error Label");
+			Reporter.log("Can't Find Error Label");
 			Assert.assertTrue(false);
 		}
-		Assert.assertEquals(ErrorLabel.getText(), "Enter a username of max length 17 without spaces");
+		Assert.assertEquals(ErrorLabel.getText(), "Username must be between 3 and 17 characters without spaces");
 		page.UserName.clear();
 		act = builder.sendKeys(page.UserName,"m k").build();
 		act.perform();
@@ -426,11 +426,11 @@ public class SignUpTest {
 		try {
 			ErrorLabel = driver.LocateByXpath("//*[@id='partition-register']/div[3]/form/div[1]/span[1]");
 		}catch(Exception e) {
-			System.out.println("Can't Find Error Label");
+			Reporter.log("Can't Find Error Label");
 			Assert.assertTrue(false);
 		}
-		Assert.assertEquals(ErrorLabel.getText(), "Enter a username of max length 17 without spaces");
-		System.out.println("Test 7 Passed");
+		Assert.assertEquals(ErrorLabel.getText(), "Username must be between 3 and 17 characters without spaces");
+		Reporter.log("Test 7 Passed");
 	}
 	@Test(description="Entering With short password",priority=7)
 	public void test8() throws InterruptedException
@@ -440,7 +440,7 @@ public class SignUpTest {
 		try {
 			page.SignUpButton = driver.LocateById(page.SignUpButtonId);
 		}catch(Exception e) {
-			System.out.println("Can't find the SignUp Button");
+			Reporter.log("Can't find the SignUp Button");
 			Assert.assertTrue(false);
 		}
 		act = builder.moveToElement(page.SignUpButton).click().build();
@@ -450,7 +450,7 @@ public class SignUpTest {
 			page.Email = driver.LocateById(page.EmailId);
 			page.Next = driver.LocateById(page.NextId);
 		}catch(Exception e) {
-			System.out.println("Missing Elements in SignUp1 Page");
+			Reporter.log("Missing Elements in SignUp1 Page");
 			Assert.assertTrue(false);
 		}
 		act = builder.sendKeys(page.Email,"mohamed12345@live.com").build();
@@ -464,7 +464,7 @@ public class SignUpTest {
 			page.Back = driver.LocateById(page.BackId);
 			page.Finish = driver.LocateById(page.FinishId);
 		}catch(Exception e) {
-			System.out.println("Missing Elements in SignUp2 Page");
+			Reporter.log("Missing Elements in SignUp2 Page");
 			Assert.assertTrue(false);
 		}
 		act = builder.sendKeys(page.UserName,"deepoo").build();
@@ -478,11 +478,11 @@ public class SignUpTest {
 		try {
 			ErrorLabel = driver.LocateByXpath("//*[@id='partition-register']/div[3]/form/div[1]/span[2]");
 		}catch(Exception e) {
-			System.out.println("Can't Find Error Label");
+			Reporter.log("Can't Find Error Label");
 			Assert.assertTrue(false);
 		}
 		Assert.assertEquals(ErrorLabel.getText(), "Password must be at least 6 characters long");
-		System.out.println("Test 8 Passed");
+		Reporter.log("Test 8 Passed");
 	}
 	
 	@Test(description="Entering Valid Email then press Next then press SignUp with valid UserName & Password",priority=8)
@@ -493,7 +493,7 @@ public class SignUpTest {
 		try {
 			page.SignUpButton = driver.LocateById(page.SignUpButtonId);
 		}catch(Exception e) {
-			System.out.println("Can't find the SignUp Button");
+			Reporter.log("Can't find the SignUp Button");
 			Assert.assertTrue(false);
 		}
 		act = builder.moveToElement(page.SignUpButton).click().build();
@@ -503,10 +503,10 @@ public class SignUpTest {
 			page.Email = driver.LocateById(page.EmailId);
 			page.Next = driver.LocateById(page.NextId);
 		}catch(Exception e) {
-			System.out.println("Missing Elements in SignUp1 Page");
+			Reporter.log("Missing Elements in SignUp1 Page");
 			Assert.assertTrue(false);
 		}
-		act = builder.sendKeys(page.Email,"hereComesTheBoom2@gmail.com").build();
+		act = builder.sendKeys(page.Email,"hereComesTheBoom8@gmail.com").build();
 		act.perform();
 		act = builder.moveToElement(page.Next).click().build();
 		act.perform();
@@ -517,10 +517,10 @@ public class SignUpTest {
 			page.Back = driver.LocateById(page.BackId);
 			page.Finish = driver.LocateById(page.FinishId);
 		}catch(Exception e) {
-			System.out.println("Missing Elements in SignUp2 Page");
+			Reporter.log("Missing Elements in SignUp2 Page");
 			Assert.assertTrue(false);
 		}
-		act = builder.sendKeys(page.UserName,"hereComes2").build();
+		act = builder.sendKeys(page.UserName,"hereComes8").build();
 		act.perform();
 		act = builder.sendKeys(page.Password,"mohamed").build();
 		act.perform();
@@ -530,15 +530,15 @@ public class SignUpTest {
 		try {
 			page.Success = driver.LocateById(page.SuccessId);
 		}catch(Exception e) {
-			System.out.println("Login Failed");
+			Reporter.log("Login Failed");
 			Assert.assertTrue(false);
 		}
-		System.out.println("Signed Up Successfully, Test 9 Passed");
+		Reporter.log("Signed Up Successfully, Test 9 Passed");
 		Thread.sleep(5000);
 		try {
 			login.logout = driver.LocateById(login.logoutDivID);
 		}catch(Exception e) {
-			System.out.println("Can't find logout btn 5");
+			Reporter.log("Can't find logout btn 5");
 			Assert.assertTrue(false);
 		}
 	  	act = builder.moveToElement(login.logout).click().build();
@@ -547,7 +547,7 @@ public class SignUpTest {
 		try {
 			login.logoutButton = driver.LocateByXpath("//button[@id='loggedbutton']//following-sibling::ul/li[5]");
 		}catch(Exception e) {
-			System.out.println("Can't find logout btn 5");
+			Reporter.log("Can't find logout btn 5");
 			Assert.assertTrue(false);
 		}
 		act = builder.moveToElement(login.logoutButton).click().build();
@@ -556,7 +556,7 @@ public class SignUpTest {
 		try {
 			login.signBtn = driver.LocateById(login.signBtnID);
 		}catch(Exception e) {
-			System.out.println("Can't  logout");
+			Reporter.log("Can't  logout");
 			Assert.assertTrue(false);
 		}
 	}

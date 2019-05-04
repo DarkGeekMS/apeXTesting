@@ -31,7 +31,7 @@ public class Chrome {
 		driver.manage().window().maximize();   /// maximize screen
 		Url= System.getenv("SERVER_URL");
 		if(Url == null){
-			Url="http://localhost:8081";
+			Url="http://35.232.3.8/";
 		}
 	}
 	
