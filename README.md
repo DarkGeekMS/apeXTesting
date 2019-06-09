@@ -3,7 +3,7 @@
 
 ## Brief Description
 
-End to End Testing code of ApeX, an social media application that mimicks reddit.
+End to End Testing code of ApeX, an social media application that mimics reddit.
 
 
 ## Utilized Technologies 
